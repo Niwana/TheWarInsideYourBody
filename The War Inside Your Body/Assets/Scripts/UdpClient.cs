@@ -52,8 +52,9 @@ public class UdpClient : MonoBehaviour , TuioListener
         {
             TuioObject tuioObject = objectList[key];
             GameObject protein = gameObjectList[tuioObject.SymbolID];
-            protein.transform.position = new Vector3(tuioObject.X * 10, -tuioObject.Y * 10, 0f);
-            protein.transform.eulerAngles = new Vector3(protein.transform.eulerAngles.x, protein.transform.eulerAngles.y, -tuioObject.Angle*360f/6.28f);
+
+            protein.transform.position = new Vector3(tuioObject.X * 10 - 10, -2f, -tuioObject.Y * 10);
+            protein.transform.eulerAngles = new Vector3(protein.transform.eulerAngles.x, -tuioObject.Angle*360f/6.28f, protein.transform.eulerAngles.z);
 
             // LOOK AT THIS CODE
             //Debug.Log(protein_1.name + " collides with " + protein_1.GetComponent<Protein>());
