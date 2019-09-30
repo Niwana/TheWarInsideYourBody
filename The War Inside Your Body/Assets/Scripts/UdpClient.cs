@@ -18,6 +18,7 @@ public class UdpClient : MonoBehaviour , TuioListener
 
     public GameObject protein_1;
     public GameObject protein_2;
+    public GameObject protein_3;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +56,8 @@ public class UdpClient : MonoBehaviour , TuioListener
             protein.transform.eulerAngles = new Vector3(protein.transform.eulerAngles.x, protein.transform.eulerAngles.y, -tuioObject.Angle*360f/6.28f);
 
             // LOOK AT THIS CODE
-            Debug.Log(protein_1.name + " collides with " + protein_1.GetComponent<Protein>());
+            //Debug.Log(protein_1.name + " collides with " + protein_1.GetComponent<Protein>());
+            Debug.Log("Protein " + protein + " " + protein.GetComponent<Protein>().getIsOverlapping());
         }
     }
 
@@ -64,11 +66,14 @@ public class UdpClient : MonoBehaviour , TuioListener
     {
         GameObject protein = new GameObject();
 
-        if (tuioObject.SymbolID == 108)
-                protein = Instantiate(protein_1);
+        if (tuioObject.SymbolID == 111)
+            protein = Instantiate(protein_1);
 
-        if (tuioObject.SymbolID == 109)
+        if (tuioObject.SymbolID == 114)
             protein = Instantiate(protein_2);
+
+        if (tuioObject.SymbolID == 115)
+            protein = Instantiate(protein_3);
 
 
         gameObjectList.Add(tuioObject.SymbolID, protein);

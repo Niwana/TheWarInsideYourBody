@@ -7,8 +7,15 @@ public class Protein : MonoBehaviour
     //float angleTreshold = 10;
     //float rotationMin, rotationMax;
 
-    public static bool isOverlapping;
-    public Collider collidingProtein;
+    private bool isOverlapping;
+    private Collider collidingProtein;
+
+    private Color startColor;
+
+        private void Start()
+    {
+        startColor = gameObject.GetComponentInChildren<MeshRenderer>().materials[0].GetColor("_Color");
+    }
 
 
     // Update is called once per frame
@@ -17,8 +24,10 @@ public class Protein : MonoBehaviour
         //rotationMin = transform.rotation.eulerAngles.z - angleTreshold;
         //rotationMax = transform.rotation.eulerAngles.z + angleTreshold;
 
-        //Debug.Log("Min: " + rotationMin + " , Max: " + rotationMax);
-        //Debug.Log(isOverlapping);
+        if (getIsOverlapping())
+            gameObject.GetComponentInChildren<MeshRenderer>().materials[0].SetColor("_Color", Color.white);
+        else
+            gameObject.GetComponentInChildren<MeshRenderer>().materials[0].SetColor("_Color", startColor);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +42,11 @@ public class Protein : MonoBehaviour
     }
 
     public bool getIsOverlapping()
+    {
+        return isOverlapping;
+    }
+
+    public bool setIsOverlapping()
     {
         return isOverlapping;
     }
