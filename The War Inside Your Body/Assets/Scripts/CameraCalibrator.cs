@@ -15,7 +15,7 @@ public class CameraCalibrator : MonoBehaviour
     {
         //initialise sliders with the saved preferences
         Slider sliderComponent = xPosSlider.GetComponent<Slider>();
-        sliderComponent.value = PlayerPrefs.HasKey("CameraXPos") ? PlayerPrefs.GetFloat("CameraXPos") : 10.0f;
+        sliderComponent.value = PlayerPrefs.HasKey("CameraXPos") ? PlayerPrefs.GetFloat("CameraXPos") : -10.0f;
 
         sliderComponent = yPosSlider.GetComponent<Slider>();
         sliderComponent.value = PlayerPrefs.HasKey("CameraYPos") ? PlayerPrefs.GetFloat("CameraYPos") : 10.0f;
@@ -35,6 +35,8 @@ public class CameraCalibrator : MonoBehaviour
 
     public void SaveCameraSettings()
     {
+        //Debug.Log("X SLider:" + xPosSlider.GetComponent<Slider>().value);
+
         PlayerPrefs.SetFloat("CameraXPos", xPosSlider.GetComponent<Slider>().value);
         PlayerPrefs.SetFloat("CameraYPos", yPosSlider.GetComponent<Slider>().value);
         PlayerPrefs.SetFloat("CameraXScale", xScaleSlider.GetComponent<Slider>().value);
