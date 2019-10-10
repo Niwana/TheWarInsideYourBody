@@ -30,7 +30,22 @@ ModelImporter:
   - first:
       74: 4512034813791830256
     second: Fly away
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pink
+    second: {fileID: 2100000, guid: bccfb78b713443546be0b0aa49924634, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red
+    second: {fileID: 2100000, guid: 3bb4159bcfd9cfc4eb110c994768bebf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yellow
+    second: {fileID: 2100000, guid: 19bc2d693d430054787cb67f19db352f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
