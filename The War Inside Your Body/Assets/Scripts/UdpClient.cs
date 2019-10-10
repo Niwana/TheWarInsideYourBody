@@ -33,6 +33,10 @@ public class UdpClient : MonoBehaviour , TuioListener
         client.connect();
 
         gameObjectList = new Dictionary<long, GameObject>(128);
+
+        //hacky display start MOVE TO ANOTHER SCRIPT PLEASE, IDEALLY THE CAMERAS
+        Display.displays[1].Activate();
+        Display.displays[2].Activate();
     }
 
     // Update is called once per frame
@@ -67,10 +71,10 @@ public class UdpClient : MonoBehaviour , TuioListener
     {
         GameObject protein = new GameObject();
 
-        if (tuioObject.SymbolID == 111)
+        if (tuioObject.SymbolID <= 3 )
             protein = Instantiate(protein_1);
 
-        if (tuioObject.SymbolID == 114)
+        if (tuioObject.SymbolID == 122)
             protein = Instantiate(protein_2);
 
         if (tuioObject.SymbolID == 115)
