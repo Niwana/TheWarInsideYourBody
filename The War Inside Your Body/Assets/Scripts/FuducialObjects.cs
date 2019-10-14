@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Protein : MonoBehaviour
+public class FuducialObjects : MonoBehaviour
 {
     private bool isOverlapping;
-    private bool isDisabled;
     private Collider collidingFuducial;
-
     private GameObject ring;
+
+    private bool isDisabled = false;
+
     public float ringSizeSpeed = 0.1f;
     public float targetRingSize = 2;
 
@@ -21,6 +22,10 @@ public class Protein : MonoBehaviour
     private void Start()
     {
         ring = this.gameObject.transform.GetChild(4).gameObject;
+
+        // Spawn a protein inside of the fuducial object
+        GameObject protein = Instantiate(proteinToSpawn, this.gameObject.transform.GetChild(0));
+        protein.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
 
@@ -31,7 +36,7 @@ public class Protein : MonoBehaviour
         // If the fuducial object collides with the protein
         if (collidingFuducial != null)
         {
-            if (collidingFuducial.gameObject.name == "FuducialObject(Clone)")
+            if (collidingFuducial.gameObject.name == "FuducialObject(Clone)"  && !isDisabled)
             {
                 this.gameObject.transform.position = collidingFuducial.transform.position;
                 this.gameObject.transform.rotation = collidingFuducial.transform.rotation;
@@ -39,19 +44,23 @@ public class Protein : MonoBehaviour
         }
 
         // Run animation on the ring
-        if (isOverlapping)
+        if (!isDisabled)
         {
-            if (ring.transform.localScale.x <= targetRingSize)
+            if (isOverlapping)
             {
-                ring.transform.localScale += new Vector3(ringSizeSpeed, ringSizeSpeed, ringSizeSpeed);
-                
+                if (ring.transform.localScale.x <= targetRingSize)
+                {
+                    ring.transform.localScale += new Vector3(ringSizeSpeed, ringSizeSpeed, ringSizeSpeed);
+
+                }
             }
-        }
-        else
-        {
-            if (ring.transform.localScale.x > 1)
+            else
             {
-                ring.transform.localScale -= new Vector3(ringSizeSpeed, ringSizeSpeed, ringSizeSpeed);
+                if (ring.transform.localScale.x > 1)
+                {
+                    ring.transform.localScale -= new Vector3(ringSizeSpeed, ringSizeSpeed, ringSizeSpeed);
+
+                }
             }
         }
     }
@@ -80,7 +89,10 @@ public class Protein : MonoBehaviour
         isOverlapping = false;
         collidingFuducial = null;
 
-        DeactivateMarkers();
+        if (!isDisabled)
+        {
+            DeactivateMarkers();
+        }
     }
 
     private void ActivateMarkers()

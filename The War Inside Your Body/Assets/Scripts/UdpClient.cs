@@ -52,7 +52,8 @@ public class UdpClient : MonoBehaviour , TuioListener
             TuioObject tuioObject = objectList[key];
             GameObject protein = gameObjectList[tuioObject.SymbolID];
 
-            protein.transform.position = new Vector3(tuioObject.X * 20 - 20, -2f, -tuioObject.Y * 20);
+            protein.transform.position = new Vector3(tuioObject.X * PlayerPrefs.GetFloat("CameraXScale") + PlayerPrefs.GetFloat("CameraXPos"), 
+                -2f, -tuioObject.Y * PlayerPrefs.GetFloat("CameraYScale") + PlayerPrefs.GetFloat("CameraYPos"));
             protein.transform.eulerAngles = new Vector3(protein.transform.eulerAngles.x, -tuioObject.Angle*360f/6.28f, protein.transform.eulerAngles.z);
         }
     }
