@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4482088, g: 0.49823272, b: 0.57557267, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482091, g: 0.4982326, b: 0.57557315, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6211,6 +6211,7 @@ GameObject:
   - component: {fileID: 1154567148}
   - component: {fileID: 1154567147}
   - component: {fileID: 1154567146}
+  - component: {fileID: 1154567149}
   m_Layer: 0
   m_Name: Screen Camera
   m_TagString: Untagged
@@ -6378,6 +6379,18 @@ MonoBehaviour:
   waveform: 0
   vectorscope: 0
   debugOverlay: 0
+--- !u!114 &1154567149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154567142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b37f0bb3219db4eb7f5a4a5ce18514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1154954420
 GameObject:
   m_ObjectHideFlags: 0
@@ -12479,6 +12492,7 @@ GameObject:
   - component: {fileID: 2041324486}
   - component: {fileID: 2041324485}
   - component: {fileID: 2041324484}
+  - component: {fileID: 2041324487}
   m_Layer: 0
   m_Name: Table Camera
   m_TagString: Untagged
@@ -12551,6 +12565,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2041324487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041324483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14ae2438e616c54aad3eee47e0294b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2055585326
 GameObject:
   m_ObjectHideFlags: 0
