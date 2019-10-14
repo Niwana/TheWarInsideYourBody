@@ -7,7 +7,7 @@ public class Markers : MonoBehaviour
 {
     public String targetMarker;
 
-    public GameObject protein_1_V;
+    public GameObject proteinToAnimate;
 
     public GameObject parent;
 
@@ -38,7 +38,7 @@ public class Markers : MonoBehaviour
             if (OnMarkerMatch != null)
                 OnMarkerMatch();
 
-            protein_1_V.GetComponent<Animator>().SetTrigger("playFlyIn");
+            proteinToAnimate.GetComponent<Animator>().SetTrigger("playFlyIn");
 
             //Disable the fuducial object
             this.gameObject.GetComponentInParent<FuducialObjects>().DisableFuducialObject();

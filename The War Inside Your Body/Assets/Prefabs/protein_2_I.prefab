@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 6304545871920614883}
   - component: {fileID: 1626576752587746046}
   m_Layer: 0
-  m_Name: MarkerA
+  m_Name: MarkerD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetMarker: 
-  protein_1_V: {fileID: 0}
+  proteinToAnimate: {fileID: 0}
   parent: {fileID: 6940247097242390213}
 --- !u!54 &1626576752587746046
 Rigidbody:
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5304617992302446725}
   - component: {fileID: 3079964393690080890}
   m_Layer: 0
-  m_Name: MarkerB
+  m_Name: MarkerF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetMarker: 
-  protein_1_V: {fileID: 0}
+  proteinToAnimate: {fileID: 0}
   parent: {fileID: 6940247097242390213}
 --- !u!54 &3079964393690080890
 Rigidbody:
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 858291718172630354}
   - component: {fileID: 6965172109759446429}
   m_Layer: 0
-  m_Name: MarkerC
+  m_Name: MarkerG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -527,8 +527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc94cd4d018ebc4e99306e73b8ebdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMarker: 
-  protein_1_V: {fileID: 0}
+  targetMarker: MarkerC
+  proteinToAnimate: {fileID: 0}
   parent: {fileID: 6940247097242390213}
 --- !u!54 &6965172109759446429
 Rigidbody:

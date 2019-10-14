@@ -13,8 +13,10 @@ public class FuducialObjects : MonoBehaviour
     public float targetRingSize = 20;
 
     public GameObject proteinToSpawn;
+    public GameObject proteinToSpawn2;
 
     public int spawnAmountProtein_1;
+    public int spawnAmountProtein_2;
 
     List<GameObject> markers = new List<GameObject>();
 
@@ -115,10 +117,23 @@ public class FuducialObjects : MonoBehaviour
 
         if (this.name == "Protein_1_I")
         {
+            //First docking
             for (int i = 0; i < spawnAmountProtein_1; i++)
             {
                 Vector3 pos = new Vector3(Random.Range(-30, 20), 0f, Random.Range(-5, 0));
-                Instantiate(proteinToSpawn, pos, Quaternion.identity);
+                if (proteinToSpawn != null)
+                {
+                    Instantiate(proteinToSpawn, pos, Quaternion.identity);
+                }
+            }
+
+            for (int i = 0; i < spawnAmountProtein_2; i++)
+            {
+                Vector3 pos = new Vector3(Random.Range(-30, 20), 0f, Random.Range(-5, 0));
+                if (proteinToSpawn2 != null)
+                {
+                    Instantiate(proteinToSpawn2, pos, Quaternion.identity);
+                }
             }
         }
     }
