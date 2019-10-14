@@ -21,12 +21,22 @@ public class Markers : MonoBehaviour
         
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         if (other.name == targetMarker)
         {
-            protein_1.GetComponent<Animator>().SetTrigger("playFlyIn");
+            protein_1_V.GetComponent<Animator>().SetTrigger("playFlyIn");
+
+            //Disable the fuducial object
+            this.gameObject.GetComponentInParent<FuducialObjects>().DisableFuducialObject();
+
+            //Spawn new proteins on the tabletop
+            this.gameObject.GetComponentInParent<FuducialObjects>().SpawnProteins();
+
+            //Play docking animation on the tabletop
+
+
         }
     }
 }

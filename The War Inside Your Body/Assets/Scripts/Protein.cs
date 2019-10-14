@@ -5,13 +5,18 @@ using UnityEngine;
 public class Protein : MonoBehaviour
 {
     private bool isOverlapping;
+    private bool isDisabled;
     private Collider collidingFuducial;
 
     private GameObject ring;
-    public float ringSizeSpeed = 1f;
-    public float targetRingSize = 20;
+    public float ringSizeSpeed = 0.1f;
+    public float targetRingSize = 2;
 
-    List<GameObject> markers = new List<GameObject>();
+    private List<GameObject> markers = new List<GameObject>();
+
+    public GameObject fuducialToSpawn;
+
+    public int numberOfProtein_1;
 
     private void Start()
     {
@@ -44,10 +49,9 @@ public class Protein : MonoBehaviour
         }
         else
         {
-            if (ring.transform.localScale.x >= 1)
+            if (ring.transform.localScale.x > 1)
             {
                 ring.transform.localScale -= new Vector3(ringSizeSpeed, ringSizeSpeed, ringSizeSpeed);
-
             }
         }
     }
@@ -56,7 +60,9 @@ public class Protein : MonoBehaviour
     {
         isOverlapping = true;
 
-        if (other.gameObject.name == "FuducialObject(Clone)")
+        //Debug.Log("Collision");
+
+        if (other.gameObject.name == "FuducialObject(Clone)" && !isDisabled)
         {
             collidingFuducial = other;
 
@@ -91,6 +97,31 @@ public class Protein : MonoBehaviour
         {
             marker.SetActive(false);
         }
+    }
+
+    public void DisableFuducialObject()
+    {
+        isDisabled = true;
+    }
+
+    public void SpawnProteins()
+    {
+        Debug.Log(this.gameObject.name);
+
+
+        
+
+        if (this.gameObject.name == "Protein_1_I")
+        {
+            Debug.Log("Spawn 1");
+
+            for (int i = 0; i < numberOfProtein_1; i++)
+            {
+                Vector3 pos = new Vector3(Random.Range(-30, 20), 0f, Random.Range(-5, 0));
+                GameObject newProtein = Instantiate(fuducialToSpawn, pos, Quaternion.identity);
+            }
+        }
+
     }
 
     public bool getIsOverlapping()
