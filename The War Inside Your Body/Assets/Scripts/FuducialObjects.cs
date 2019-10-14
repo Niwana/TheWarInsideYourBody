@@ -33,7 +33,7 @@ public class FuducialObjects : MonoBehaviour
         // If the fuducial object collides with the protein
         if (collidingFuducial != null)
         {
-            if (collidingFuducial.gameObject.name == "FuducialObject(Clone)"  && !isDisabled)
+            if ((collidingFuducial.gameObject.name == "FuducialObject(Clone)" || collidingFuducial.gameObject.name == "FuducialObject") && !isDisabled)
             {
                 this.gameObject.transform.position = collidingFuducial.transform.position;
                 this.gameObject.transform.rotation = collidingFuducial.transform.rotation;
@@ -66,7 +66,7 @@ public class FuducialObjects : MonoBehaviour
     {
         isOverlapping = true;
 
-        if (other.gameObject.name == "FuducialObject(Clone)" && !isDisabled)
+        if ((other.gameObject.name == "FuducialObject(Clone)" || other.gameObject.name == "FuducialObject") && !isDisabled)
         {
             collidingFuducial = other;
 

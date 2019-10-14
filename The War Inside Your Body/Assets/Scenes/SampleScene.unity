@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4482088, g: 0.49823272, b: 0.57557267, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482091, g: 0.4982326, b: 0.57557315, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7091,6 +7091,7 @@ GameObject:
   - component: {fileID: 1378834387}
   - component: {fileID: 1378834386}
   - component: {fileID: 1378834388}
+  - component: {fileID: 1378834389}
   m_Layer: 0
   m_Name: FuducialObject
   m_TagString: Untagged
@@ -7154,6 +7155,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d1b5ef2b98d9841b6154eb7c1745bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1378834389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378834384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b61a04d6d05c04ab63025f44512b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.01
+  camera2: {fileID: 2041324485}
 --- !u!1 &1388740095
 GameObject:
   m_ObjectHideFlags: 0
@@ -12642,7 +12657,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -12666,7 +12681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041324483}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -6.3, y: 14.9, z: -8.6}
+  m_LocalPosition: {x: 0, y: 14.9, z: -11.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
