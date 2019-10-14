@@ -9,6 +9,7 @@ public class Markers : MonoBehaviour
 
     public GameObject protein_1_V;
 
+    public GameObject parent;
 
     public delegate void MatchAction();
     public static event MatchAction OnMarkerMatch;
@@ -40,8 +41,12 @@ public class Markers : MonoBehaviour
             protein_1_V.GetComponent<Animator>().SetTrigger("playFlyIn");
 
             //Disable the fuducial object
-
             this.gameObject.GetComponentInParent<FuducialObjects>().DisableFuducialObject();
+
+            //Spawn proteins on the tabletop
+            parent.GetComponent<FuducialObjects>().SpawnProteins();
+
+            //Play docking animation on the tabletop
  
         }
     }

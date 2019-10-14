@@ -12,18 +12,15 @@ public class FuducialObjects : MonoBehaviour
     public float ringSizeSpeed = 1f;
     public float targetRingSize = 20;
 
-    //[HideInInspector]
     public GameObject proteinToSpawn;
+
+    public int spawnAmountProtein_1;
 
     List<GameObject> markers = new List<GameObject>();
 
     private void Start()
     {
         ring = this.gameObject.transform.GetChild(4).gameObject;
-
-        // Spawn a protein inside of the fuducial object
-        GameObject protein = Instantiate(proteinToSpawn, this.gameObject.transform.GetChild(0));
-        protein.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
 
@@ -54,7 +51,7 @@ public class FuducialObjects : MonoBehaviour
             }
             else
             {
-                if (ring.transform.localScale.x >= 1)
+                if (ring.transform.localScale.x > 1)
                 {
                     ring.transform.localScale -= new Vector3(ringSizeSpeed, ringSizeSpeed, ringSizeSpeed);
 
@@ -110,6 +107,20 @@ public class FuducialObjects : MonoBehaviour
     public void DisableFuducialObject()
     {
         isDisabled = true;
+    }
+
+    public void SpawnProteins()
+    {
+        Debug.Log(this.name);
+
+        if (this.name == "Protein_1_I")
+        {
+            for (int i = 0; i < spawnAmountProtein_1; i++)
+            {
+                Vector3 pos = new Vector3(Random.Range(-30, 20), 0f, Random.Range(-5, 0));
+                Instantiate(proteinToSpawn, pos, Quaternion.identity);
+            }
+        }
     }
 
     public bool getIsOverlapping()

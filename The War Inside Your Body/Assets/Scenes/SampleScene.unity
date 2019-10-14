@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4482091, g: 0.4982326, b: 0.57557315, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482088, g: 0.49823272, b: 0.57557267, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -811,11 +811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfd4eb530f88544f8a9be701a79917a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  protein_1: {fileID: 2070564067928319975, guid: a3c820452d95ecc418948f44a0901780,
-    type: 3}
-  protein_2: {fileID: 2070564067928319975, guid: 57b34f71d9a99f344b6ca4f29c881611,
-    type: 3}
-  protein_3: {fileID: 0}
   fuducialObject: {fileID: 1378834384}
 --- !u!4 &528326298
 Transform:
@@ -6710,7 +6705,7 @@ PrefabInstance:
     - target: {fileID: 6940247097242390213, guid: 15270dba28f79d04c8abe4f91586b9ba,
         type: 3}
       propertyPath: m_Name
-      value: FuducialObject
+      value: Protein_1_I
       objectReference: {fileID: 0}
     - target: {fileID: -5656315205283380084, guid: 15270dba28f79d04c8abe4f91586b9ba,
         type: 3}
@@ -6726,12 +6721,17 @@ PrefabInstance:
         type: 3}
       propertyPath: proteinToSpawn
       value: 
-      objectReference: {fileID: 9188404001630248514, guid: 2a5739f6f4b032447bc19dffcff0284e,
+      objectReference: {fileID: 6940247097242390213, guid: 0469808f35a7d5f43ae730e8fdc7d51f,
         type: 3}
+    - target: {fileID: -5656315205283380084, guid: 15270dba28f79d04c8abe4f91586b9ba,
+        type: 3}
+      propertyPath: spawnAmountProtein_1
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4775785823580167917, guid: 15270dba28f79d04c8abe4f91586b9ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.62936
+      value: -1.63
       objectReference: {fileID: 0}
     - target: {fileID: 4775785823580167917, guid: 15270dba28f79d04c8abe4f91586b9ba,
         type: 3}
@@ -6741,7 +6741,7 @@ PrefabInstance:
     - target: {fileID: 4775785823580167917, guid: 15270dba28f79d04c8abe4f91586b9ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.43
+      value: -7.43
       objectReference: {fileID: 0}
     - target: {fileID: 4775785823580167917, guid: 15270dba28f79d04c8abe4f91586b9ba,
         type: 3}
@@ -6824,6 +6824,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 580833896}
     - target: {fileID: 5304617992302446725, guid: 15270dba28f79d04c8abe4f91586b9ba,
+        type: 3}
+      propertyPath: protein_1_V
+      value: 
+      objectReference: {fileID: 580833896}
+    - target: {fileID: 6304545871920614883, guid: 15270dba28f79d04c8abe4f91586b9ba,
+        type: 3}
+      propertyPath: protein_1_V
+      value: 
+      objectReference: {fileID: 580833896}
+    - target: {fileID: 858291718172630354, guid: 15270dba28f79d04c8abe4f91586b9ba,
         type: 3}
       propertyPath: protein_1_V
       value: 
