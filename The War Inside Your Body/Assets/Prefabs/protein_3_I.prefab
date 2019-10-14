@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 6304545871920614883}
   - component: {fileID: 1626576752587746046}
   m_Layer: 0
-  m_Name: MarkerD
+  m_Name: MarkerH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 5304617992302446725}
   - component: {fileID: 3079964393690080890}
   m_Layer: 0
-  m_Name: MarkerF
+  m_Name: MarkerI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc94cd4d018ebc4e99306e73b8ebdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMarker: 
+  targetMarker: MarkerF
   proteinToAnimate: {fileID: 0}
   parent: {fileID: 6940247097242390213}
 --- !u!54 &3079964393690080890
@@ -378,6 +378,7 @@ MonoBehaviour:
   proteinToSpawn: {fileID: 0}
   proteinToSpawn2: {fileID: 0}
   spawnAmountProtein_1: 0
+  spawnAmountProtein_2: 0
 --- !u!65 &2037087793379819866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -437,7 +438,7 @@ GameObject:
   - component: {fileID: 858291718172630354}
   - component: {fileID: 6965172109759446429}
   m_Layer: 0
-  m_Name: MarkerG
+  m_Name: MarkerJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,6 +694,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c965c3863a8f2a4c9b5104e4910e5d2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c965c3863a8f2a4c9b5104e4910e5d2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 0c965c3863a8f2a4c9b5104e4910e5d2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c965c3863a8f2a4c9b5104e4910e5d2, type: 3}
