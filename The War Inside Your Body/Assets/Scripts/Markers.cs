@@ -7,7 +7,8 @@ public class Markers : MonoBehaviour
 {
     public String targetMarker;
 
-    public GameObject protein_1;
+    public GameObject protein_1_V;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,11 @@ public class Markers : MonoBehaviour
         Debug.Log(other.name);
         if (other.name == targetMarker)
         {
-            protein_1.GetComponent<Animator>().SetTrigger("playFlyIn");
+            protein_1_V.GetComponent<Animator>().SetTrigger("playFlyIn");
+
+            //Disable the fuducial object
+            this.gameObject.GetComponentInParent<FuducialObjects>().DisableFuducialObject();
+ 
         }
     }
 }
