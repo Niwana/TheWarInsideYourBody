@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 0c965c3863a8f2a4c9b5104e4910e5d2,
         type: 3}
       propertyPath: m_Name
-      value: protein_3
+      value: protein_3_V
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0c965c3863a8f2a4c9b5104e4910e5d2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.06
+      value: -9.66
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0c965c3863a8f2a4c9b5104e4910e5d2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.68
+      value: 31.71
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0c965c3863a8f2a4c9b5104e4910e5d2,
         type: 3}

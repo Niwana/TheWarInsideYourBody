@@ -35,8 +35,11 @@ public class FuducialObjects : MonoBehaviour
         {
             if ((collidingFuducial.gameObject.name == "FuducialObject(Clone)" || collidingFuducial.gameObject.name == "FuducialObject") && !isDisabled)
             {
-                this.gameObject.transform.position = collidingFuducial.transform.position;
-                this.gameObject.transform.rotation = collidingFuducial.transform.rotation;
+                if (collidingFuducial.transform.position.x <= transform.position.x + 1000) //put range for safety
+                {
+                    this.gameObject.transform.position = collidingFuducial.transform.position;
+                    this.gameObject.transform.rotation = collidingFuducial.transform.rotation;
+                }
             }
         }
 
@@ -120,7 +123,7 @@ public class FuducialObjects : MonoBehaviour
         {
             for (int i = 0; i < spawnAmountProtein_1; i++)
             {
-                Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-5, 0));
+                Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
                 if (proteinToSpawn != null)
                 {
                     Instantiate(proteinToSpawn, pos, Quaternion.identity);
@@ -128,7 +131,7 @@ public class FuducialObjects : MonoBehaviour
             }
             for (int i = 0; i < spawnAmountProtein_2; i++)
             {
-                Vector3 pos = new Vector3(Random.Range(-30, 20), 0f, Random.Range(-5, 0));
+                Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
                 if (proteinToSpawn2 != null)
                 {
                     Instantiate(proteinToSpawn2, pos, Quaternion.identity);

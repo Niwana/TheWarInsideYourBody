@@ -28,15 +28,15 @@ public class MouseFollow : MonoBehaviour
 
         mousePosition.y = 0;
 
-        if (Input.GetKey(KeyCode.RightArrow))
-            transform.Rotate(0, 1.5f, 0);
-        if (Input.GetKey(KeyCode.LeftArrow))
-            transform.Rotate(0, -1.5f, 0);
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Mouse0))
+            transform.Rotate(0, 3f, 0);
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.Mouse1))
+            transform.Rotate(0, -3f, 0);
 
 
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse2))
         {
-            mousePosition.x = 10000;
+            mousePosition.x = 10000000;
         }
         transform.position = mousePosition;
         //transform.position = Vector3.Lerp(transform.position, mousePosition, moveSpeed);
