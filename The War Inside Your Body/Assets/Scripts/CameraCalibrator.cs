@@ -56,7 +56,7 @@ public class CameraCalibrator : MonoBehaviour
         float xPos0 = xPosSlider.GetComponent<Slider>().value;
         float yPos0 = yPosSlider.GetComponent<Slider>().value;
         float xPos1 = xPos0 + xScaleSlider.GetComponent<Slider>().value;
-        float yPos1 = yPos0 + yScaleSlider.GetComponent<Slider>().value;
+        float yPos1 = yPos0 - yScaleSlider.GetComponent<Slider>().value;
 
         //draw rectangle on world to visualise
         // Draws a blue rectangle to the webcam tracking target window
