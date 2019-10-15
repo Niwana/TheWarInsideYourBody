@@ -7,7 +7,7 @@ public class FuducialObjects : MonoBehaviour
     private bool isOverlapping;
     private Collider collidingFuducial;
     private GameObject ring;
-    private bool isDisabled = false;
+    public bool isDisabled = false;
 
     public float ringSizeSpeed = 1f;
     public float targetRingSize = 20;
@@ -115,9 +115,9 @@ public class FuducialObjects : MonoBehaviour
     {
         Debug.Log(this.name);
 
+        //First docking
         if (this.name == "Protein_1_I")
         {
-            //First docking
             for (int i = 0; i < spawnAmountProtein_1; i++)
             {
                 Vector3 pos = new Vector3(Random.Range(-30, 20), 0f, Random.Range(-5, 0));
@@ -126,7 +126,6 @@ public class FuducialObjects : MonoBehaviour
                     Instantiate(proteinToSpawn, pos, Quaternion.identity);
                 }
             }
-
             for (int i = 0; i < spawnAmountProtein_2; i++)
             {
                 Vector3 pos = new Vector3(Random.Range(-30, 20), 0f, Random.Range(-5, 0));
