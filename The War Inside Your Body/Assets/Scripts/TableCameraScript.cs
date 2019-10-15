@@ -8,7 +8,7 @@ public class TableCameraScript : MonoBehaviour
     void Start()
     {
         //activate the screen to be used, with resolution
-        Display.displays[1].Activate(1280, 800, 60);
+        Display.displays[1].Activate();
 
     }
 
