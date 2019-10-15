@@ -120,7 +120,7 @@ public class FuducialObjects : MonoBehaviour
         {
             for (int i = 0; i < spawnAmountProtein_1; i++)
             {
-                Vector3 pos = new Vector3(Random.Range(-30, 20), 0f, Random.Range(-5, 0));
+                Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-5, 0));
                 if (proteinToSpawn != null)
                 {
                     Instantiate(proteinToSpawn, pos, Quaternion.identity);
