@@ -34,6 +34,10 @@ public class MouseFollow : MonoBehaviour
             transform.Rotate(0, -1.5f, 0);
 
 
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            mousePosition.x = 10000;
+        }
         transform.position = mousePosition;
         //transform.position = Vector3.Lerp(transform.position, mousePosition, moveSpeed);
 
