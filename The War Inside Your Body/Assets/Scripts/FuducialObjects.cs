@@ -112,6 +112,8 @@ public class FuducialObjects : MonoBehaviour
     public void DisableFuducialObject()
     {
         isDisabled = true;
+        //Disable ring when connection is made
+        ring.gameObject.SetActive(false);
     }
 
     public void SpawnProteins()

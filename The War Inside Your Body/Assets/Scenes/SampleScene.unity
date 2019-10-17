@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4482091, g: 0.4982326, b: 0.57557315, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482088, g: 0.49823272, b: 0.57557267, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7162,7 +7162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378834384}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66b61a04d6d05c04ab63025f44512b3d, type: 3}
   m_Name: 
@@ -7527,12 +7527,12 @@ PrefabInstance:
     - target: {fileID: 4775785823580167917, guid: 15270dba28f79d04c8abe4f91586b9ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4775785823580167917, guid: 15270dba28f79d04c8abe4f91586b9ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.58
+      value: -23.5
       objectReference: {fileID: 0}
     - target: {fileID: 4775785823580167917, guid: 15270dba28f79d04c8abe4f91586b9ba,
         type: 3}
@@ -7961,7 +7961,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -12696,7 +12696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041324483}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2, y: 14.9, z: -11.6}
+  m_LocalPosition: {x: -2, y: 14.9, z: -11.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
