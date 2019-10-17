@@ -14,8 +14,8 @@ public class Markers : MonoBehaviour
     public delegate void MatchAction();
     public static event MatchAction OnMarkerMatch;
 
-    //private LineRenderer line;
-
+    private static int nextMarkerMatch = 0;
+    private static string[] markerMatches = { "MarkerE", "MarkerA", "MarkerF" };
 
     // Start is called before the first frame update
     void Start()
@@ -35,13 +35,15 @@ public class Markers : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name);
-        if (other.name == targetMarker)
+        if (other.name == targetMarker && markerMatches[nextMarkerMatch] == targetMarker)
         {
             //TODO: use these events instead of the manual calls below it
             //use the event to announce the trigger, add in listener functions i.e. animation play and disable etc
             //e.g. marker.OnMarkerMatch += DisableFuducialObject(); in the parent object
             if (OnMarkerMatch != null)
                 OnMarkerMatch();
+
+            nextMarkerMatch++;
 
             proteinToAnimate.GetComponent<Animator>().SetTrigger("playFlyIn");
 

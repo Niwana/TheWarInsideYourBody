@@ -74,7 +74,7 @@ public class FuducialObjects : MonoBehaviour
         {
             //note/todo: this still triggers the marker collision twice if not perfectly rotated?
             //TODO: not hardcode the target position. i guess you can define it in scene
-            MoveTo(matchTargetPosition, Quaternion.LookRotation(matchTargetRotation), 0.3f, 180f);
+            //MoveTo(matchTargetPosition, Quaternion.LookRotation(matchTargetRotation), 0.3f, 180f);
         }
     }
 
