@@ -20,6 +20,13 @@ public class FuducialObjects : MonoBehaviour
 
     List<GameObject> markers = new List<GameObject>();
 
+    //post-match docking
+    public Vector3 matchTargetPosition = new Vector3(-4.79f, 0f, -15.5f);
+    public Vector3 matchTargetRotation = Vector3.back;
+
+    private Vector3 velocity = Vector3.zero; //var used for movement damping, just leave this
+
+
     private void Start()
     {
         ring = this.gameObject.transform.GetChild(4).gameObject;
@@ -29,7 +36,6 @@ public class FuducialObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         // If the fuducial object collides with the protein
         if (collidingFuducial != null)
         {
@@ -37,8 +43,9 @@ public class FuducialObjects : MonoBehaviour
             {
                 if (collidingFuducial.transform.position.x <= transform.position.x + 1000) //put range for safety
                 {
-                    this.gameObject.transform.position = collidingFuducial.transform.position;
-                    this.gameObject.transform.rotation = collidingFuducial.transform.rotation;
+                    MoveTo(collidingFuducial.transform.position, collidingFuducial.transform.rotation, 0.02f, 360);
+                    //this.gameObject.transform.position = collidingFuducial.transform.position;
+                    //this.gameObject.transform.rotation = collidingFuducial.transform.rotation;
                 }
             }
         }
@@ -62,6 +69,12 @@ public class FuducialObjects : MonoBehaviour
 
                 }
             }
+        }
+        else // example to move to static position after matching
+        {
+            //note/todo: this still triggers the marker collision twice if not perfectly rotated?
+            //TODO: not hardcode the target position. i guess you can define it in scene
+            MoveTo(matchTargetPosition, Quaternion.LookRotation(matchTargetRotation), 0.3f, 180f);
         }
     }
 
@@ -152,4 +165,16 @@ public class FuducialObjects : MonoBehaviour
         isOverlapping = _bool;
         return isOverlapping;
     }
+
+
+    ///<summary>
+    ///smoothly move self to target position at the current frame. 
+    ///it's not super intuitive: reachTime is time to reach position (lower=faster), degRate is in degrees/second.
+    ///</summary>
+    public void MoveTo(Vector3 position, Quaternion rotation, float reachTime, float degRate)
+    {
+        transform.position = Vector3.SmoothDamp(transform.position, position, ref velocity, reachTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, degRate * Time.deltaTime);
+    }
+
 }
