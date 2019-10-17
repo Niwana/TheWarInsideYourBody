@@ -7,7 +7,7 @@ public class Markers : MonoBehaviour
 {
     public String targetMarker;
 
-    public GameObject proteinToAnimate;
+    //public GameObject proteinToAnimate;
 
     public GameObject parent;
 
@@ -35,7 +35,7 @@ public class Markers : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name);
-        if (other.name == targetMarker && markerMatches[nextMarkerMatch] == targetMarker)
+        if (other.name == targetMarker) //&& markerMatches[nextMarkerMatch] == targetMarker
         {
             //TODO: use these events instead of the manual calls below it
             //use the event to announce the trigger, add in listener functions i.e. animation play and disable etc
@@ -45,13 +45,15 @@ public class Markers : MonoBehaviour
 
             nextMarkerMatch++;
 
-            proteinToAnimate.GetComponent<Animator>().SetTrigger("playFlyIn");
+            //proteinToAnimate.GetComponent<Animator>().SetTrigger("playFlyIn");
 
             //Disable the fuducial object
             this.gameObject.GetComponentInParent<FuducialObjects>().DisableFuducialObject();
 
             //Spawn proteins on the tabletop
             parent.GetComponent<FuducialObjects>().SpawnProteins();
+            
+            parent.GetComponent<FuducialObjects>().PlayAnimation();
 
             //Make marker invisible to show connection instead
             this.gameObject.SetActive(false);

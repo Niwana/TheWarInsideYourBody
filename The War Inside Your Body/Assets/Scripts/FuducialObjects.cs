@@ -27,9 +27,24 @@ public class FuducialObjects : MonoBehaviour
 
     public LineRenderer line;
 
+    public GameObject proteinToAnimate;
+
+
     private void Start()
     {
         ring = this.gameObject.transform.GetChild(4).gameObject;
+
+        proteinToAnimate = GameObject.Find(proteinToAnimate.name);
+
+        //Save all markers in a list and disable them at start
+        foreach (Transform child in transform)
+        {
+            if (child.tag == "Marker" && child.GetComponentInChildren<MeshRenderer>() != null)
+            {
+                markers.Add(child.GetComponentInChildren<MeshRenderer>().gameObject);
+                child.GetChild(0).gameObject.SetActive(false);
+            }
+        }
     }
 
 
@@ -86,10 +101,8 @@ public class FuducialObjects : MonoBehaviour
         {
             collidingFuducial = other;
 
-            
-            markers.Add(this.gameObject.transform.GetChild(1).transform.GetChild(0).gameObject);
-            markers.Add(this.gameObject.transform.GetChild(2).transform.GetChild(0).gameObject);
-            markers.Add(this.gameObject.transform.GetChild(3).transform.GetChild(0).gameObject);
+            //TODO REMOVE IF EVERYTHING WORKS
+            //markers.Add(this.gameObject.transform.GetChild(1).transform.GetChild(0).gameObject);
 
             ActivateMarkers();
         }
@@ -153,6 +166,11 @@ public class FuducialObjects : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PlayAnimation()
+    {
+        proteinToAnimate.GetComponent<Animator>().SetTrigger("playFlyIn");
     }
 
     public void SpawnConnectionLine(Vector3 otherPosition)
