@@ -20,12 +20,12 @@ public class FuducialObjects : MonoBehaviour
 
     List<GameObject> markers = new List<GameObject>();
 
-    //post-match docking
     public Vector3 matchTargetPosition = new Vector3(-4.79f, 0f, -15.5f);
     public Vector3 matchTargetRotation = Vector3.back;
 
     private Vector3 velocity = Vector3.zero; //var used for movement damping, just leave this
 
+    public LineRenderer line;
 
     private void Start()
     {
@@ -126,7 +126,7 @@ public class FuducialObjects : MonoBehaviour
     {
         isDisabled = true;
         //Disable ring when connection is made
-        ring.gameObject.SetActive(false);
+        ring.gameObject.GetComponentInChildren<Renderer>().material.SetColor("_EmissionColor", new Color(0.1f, 0.1f, 0.1f));
     }
 
     public void SpawnProteins()
@@ -153,6 +153,20 @@ public class FuducialObjects : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SpawnConnectionLine(Vector3 otherPosition)
+    {
+        Vector3 thisPosition = this.gameObject.transform.position;
+        Vector3 middlePoint = Vector3.Normalize(otherPosition - thisPosition) + thisPosition;
+        line = Instantiate(line);
+        line.numCornerVertices = 5;
+        line.transform.position = middlePoint;
+        line.transform.rotation = Quaternion.LookRotation(Vector3.Normalize(otherPosition - thisPosition));
+        line.SetPosition(0, new Vector3(0.0f, 0.0f, 0.0f));
+        line.SetPosition(1, new Vector3(0.0f, 0.0f, Vector3.Distance(transform.position, otherPosition)));
+        Debug.Log(line.GetPosition(0));
+        Debug.Log(line.GetPosition(1));
     }
 
     public bool getIsOverlapping()

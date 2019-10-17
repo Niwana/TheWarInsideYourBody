@@ -14,11 +14,16 @@ public class Markers : MonoBehaviour
     public delegate void MatchAction();
     public static event MatchAction OnMarkerMatch;
 
+    //private LineRenderer line;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //line = Instantiate(Resources.Load("Line")) as LineRenderer;
+        //line.positionCount = 2;
+        //line.material = new Material(Shader.Find("Sprites/Default"));
+        //line.material.color = Color.red;
     }
 
     // Update is called once per frame
@@ -46,8 +51,14 @@ public class Markers : MonoBehaviour
             //Spawn proteins on the tabletop
             parent.GetComponent<FuducialObjects>().SpawnProteins();
 
+            //Make marker invisible to show connection instead
+            this.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
+            //this.gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
+            this.parent.GetComponent<FuducialObjects>().SpawnConnectionLine(other.gameObject.GetComponent<Markers>().parent.transform.position);
+
             //Play docking animation on the tabletop
- 
+
         }
     }
 }
