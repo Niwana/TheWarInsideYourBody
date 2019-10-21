@@ -48,6 +48,7 @@ public class CameraCalibrator : MonoBehaviour
         PlayerPrefs.SetFloat("CameraYPos", yPos0);
         PlayerPrefs.SetFloat("CameraXScale", xScale);
         PlayerPrefs.SetFloat("CameraYScale", yScale);
+        PlayerPrefs.Save(); //so it saves before quitting
 
     }
 
