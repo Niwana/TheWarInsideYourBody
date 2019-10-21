@@ -34,7 +34,7 @@ public class FuducialObjects : MonoBehaviour
 
     private void Start()
     {
-        ring = this.gameObject.transform.GetChild(4).gameObject;
+        ring = this.gameObject.transform.GetChild(5).gameObject;
 
         proteinToAnimate = GameObject.Find(proteinToAnimate.name);
 
