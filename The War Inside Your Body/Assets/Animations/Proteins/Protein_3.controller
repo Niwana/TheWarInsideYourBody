@@ -31,7 +31,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Protein 2
+  m_Name: Protein_3
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: playFlyIn
@@ -100,7 +100,7 @@ AnimatorStateMachine:
     m_Position: {x: 300, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7793413395877292325}
-    m_Position: {x: 560, y: 110, z: 0}
+    m_Position: {x: 580, y: 110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -131,7 +131,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0a7e30dce348eac44a118cb1ed4b1f66, type: 2}
+  m_Motion: {fileID: 7400000, guid: 33577e77831b229449ce2ce141db3914, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
