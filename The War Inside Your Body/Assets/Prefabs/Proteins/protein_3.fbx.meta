@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 0c965c3863a8f2a4c9b5104e4910e5d2
+guid: 0aa596b1423372945bba856720bde462
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Bar color
-    second: {fileID: 2100000, guid: 19bc2d693d430054787cb67f19db352f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -17,7 +12,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Ring color
+      name: Secondary color
     second: {fileID: 2100000, guid: 19bc2d693d430054787cb67f19db352f, type: 2}
   materials:
     importMaterials: 1
