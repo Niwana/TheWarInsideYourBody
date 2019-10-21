@@ -10,7 +10,9 @@ public class FuducialObjects : MonoBehaviour
     public bool isDisabled = false;
 
     public float ringSizeSpeed = 1f;
-    public float targetRingSize = 20;
+    private float startScale;
+    public float targetRingMaxSize = 200;
+    public float targetRingMinSize = 100;
 
     public GameObject proteinToSpawn;
     public GameObject proteinToSpawn2;
@@ -35,6 +37,8 @@ public class FuducialObjects : MonoBehaviour
         ring = this.gameObject.transform.GetChild(4).gameObject;
 
         proteinToAnimate = GameObject.Find(proteinToAnimate.name);
+
+        startScale = ring.transform.localScale.x;
 
         //Save all markers in a list and disable them at start
         foreach (Transform child in transform)
@@ -70,15 +74,14 @@ public class FuducialObjects : MonoBehaviour
         {
             if (isOverlapping)
             {
-                if (ring.transform.localScale.x <= targetRingSize)
+                if (ring.transform.localScale.x <= targetRingMaxSize)
                 {
                     ring.transform.localScale += new Vector3(ringSizeSpeed, ringSizeSpeed, ringSizeSpeed);
-
                 }
             }
             else
             {
-                if (ring.transform.localScale.x > 1)
+                if (ring.transform.localScale.x > startScale)
                 {
                     ring.transform.localScale -= new Vector3(ringSizeSpeed, ringSizeSpeed, ringSizeSpeed);
 
@@ -90,6 +93,13 @@ public class FuducialObjects : MonoBehaviour
             //note/todo: this still triggers the marker collision twice if not perfectly rotated?
             //TODO: not hardcode the target position. i guess you can define it in scene
             //MoveTo(matchTargetPosition, Quaternion.LookRotation(matchTargetRotation), 0.3f, 180f);
+
+            //Decrease ring size
+            if (ring.transform.localScale.x > targetRingMinSize)
+            {
+                ring.transform.localScale -= new Vector3(ringSizeSpeed, ringSizeSpeed, ringSizeSpeed);
+
+            }
         }
     }
 
