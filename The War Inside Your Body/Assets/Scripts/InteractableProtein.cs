@@ -13,6 +13,6 @@ public class InteractableProtein : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.Rotate(0.5f, 1, 0.2f);
+        this.gameObject.transform.Rotate(0, 1, 0);
     }
 }
