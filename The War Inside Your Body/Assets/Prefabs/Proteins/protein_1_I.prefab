@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc94cd4d018ebc4e99306e73b8ebdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMarker: PS
+  targetMarker: 
   parent: {fileID: 6940247097242390213}
 --- !u!1 &2715914768374931282
 GameObject:
@@ -551,6 +551,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4775785823580167917}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 568cc3a6ec780b04b828883e72db3ec0,
+        type: 3}
+      propertyPath: m_Name
+      value: ring
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 568cc3a6ec780b04b828883e72db3ec0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -621,11 +626,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 568cc3a6ec780b04b828883e72db3ec0,
-        type: 3}
-      propertyPath: m_Name
-      value: ring
-      objectReference: {fileID: 0}
     - target: {fileID: -2416733968201007103, guid: 568cc3a6ec780b04b828883e72db3ec0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -649,7 +649,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 619ff768e22311542b573a3c43b2f6a3,
         type: 3}
       propertyPath: m_Name
-      value: P1b
+      value: x
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 619ff768e22311542b573a3c43b2f6a3,
         type: 3}

@@ -14,16 +14,13 @@ public class Markers : MonoBehaviour
     public delegate void MatchAction();
     public static event MatchAction OnMarkerMatch;
 
-    private static int nextMarkerMatch = 0;
-    private static string[] markerMatches = { "MarkerE", "MarkerA", "MarkerF" };
+    //private static int nextMarkerMatch = 0;
+    //private static string[] markerMatches = { "PS", "P1a", "P2a" };
 
     // Start is called before the first frame update
     void Start()
     {
-        //line = Instantiate(Resources.Load("Line")) as LineRenderer;
-        //line.positionCount = 2;
-        //line.material = new Material(Shader.Find("Sprites/Default"));
-        //line.material.color = Color.red;
+
     }
 
     // Update is called once per frame
@@ -37,13 +34,7 @@ public class Markers : MonoBehaviour
         Debug.Log(other.name);
         if (other.name == targetMarker) //&& markerMatches[nextMarkerMatch] == targetMarker
         {
-            //TODO: use these events instead of the manual calls below it
-            //use the event to announce the trigger, add in listener functions i.e. animation play and disable etc
-            //e.g. marker.OnMarkerMatch += DisableFuducialObject(); in the parent object
-            if (OnMarkerMatch != null)
-                OnMarkerMatch();
-
-            nextMarkerMatch++;
+            //nextMarkerMatch++;
 
             //proteinToAnimate.GetComponent<Animator>().SetTrigger("playFlyIn");
 

@@ -39,9 +39,9 @@ public class FuducialObjects : MonoBehaviour
         //Save all markers in a list and disable them at start
         foreach (Transform child in transform)
         {
-            if (child.tag == "Marker" && child.GetComponentInChildren<MeshRenderer>() != null)
+            if (child.tag == "Marker" && child.transform.childCount > 0)
             {
-                markers.Add(child.GetComponentInChildren<MeshRenderer>().gameObject);
+                markers.Add(child.transform.GetChild(0).gameObject);
                 child.GetChild(0).gameObject.SetActive(false);
             }
         }
@@ -100,9 +100,6 @@ public class FuducialObjects : MonoBehaviour
         if ((other.gameObject.name == "FuducialObject(Clone)" || other.gameObject.name == "FuducialObject") && !isDisabled)
         {
             collidingFuducial = other;
-
-            //TODO REMOVE IF EVERYTHING WORKS
-            //markers.Add(this.gameObject.transform.GetChild(1).transform.GetChild(0).gameObject);
 
             ActivateMarkers();
         }
