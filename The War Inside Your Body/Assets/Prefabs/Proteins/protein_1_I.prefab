@@ -42,6 +42,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetMarker: PS
+  shownOnConnection: 0
   parent: {fileID: 6940247097242390213}
 --- !u!1 &2715914768374931282
 GameObject:
@@ -176,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetMarker: 
+  shownOnConnection: 1
   parent: {fileID: 6940247097242390213}
 --- !u!1 &6940247097242390213
 GameObject:
@@ -233,7 +235,7 @@ MonoBehaviour:
   targetRingMinSize: 100
   proteinToSpawn: {fileID: 6940247097242390213, guid: 0469808f35a7d5f43ae730e8fdc7d51f,
     type: 3}
-  proteinToSpawn2: {fileID: 6940247097242390213, guid: 0be2691b62ce79c4094ee00a334299ed,
+  proteinToSpawn2: {fileID: 6940247097242390213, guid: dc6226a83938dd04e88b64dae16dad3f,
     type: 3}
   spawnAmountProtein_1: 1
   spawnAmountProtein_2: 1

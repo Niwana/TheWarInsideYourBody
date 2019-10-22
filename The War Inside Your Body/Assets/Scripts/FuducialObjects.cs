@@ -88,7 +88,7 @@ public class FuducialObjects : MonoBehaviour
                 }
             }
         }
-        else // example to move to static position after matching
+        else 
         {
             //note/todo: this still triggers the marker collision twice if not perfectly rotated?
             //TODO: not hardcode the target position. i guess you can define it in scene
@@ -130,7 +130,10 @@ public class FuducialObjects : MonoBehaviour
     {
         foreach (var marker in markers)
         {
-            marker.SetActive(true);
+            if (!marker.GetComponent<Markers>().shownOnConnection)
+            {
+                marker.SetActive(true);
+            }
         }
     }    
     
@@ -142,6 +145,30 @@ public class FuducialObjects : MonoBehaviour
         }
     }
 
+
+    public void OnConnection(GameObject otherProtein)
+    {
+        //Disable the fuducial object
+        DisableFuducialObject();
+
+        //Spawn proteins on the tabletop
+        SpawnProteins();
+
+        PlayAnimation();
+
+        //Spawn connection line
+        SpawnConnectionLine(otherProtein.transform.position);
+
+        foreach (var marker in markers)
+        {
+            if (marker.GetComponent<Markers>().shownOnConnection)
+            {
+                marker.SetActive(true);
+            }
+        }
+
+    }
+
     public void DisableFuducialObject()
     {
         isDisabled = true;
@@ -149,28 +176,26 @@ public class FuducialObjects : MonoBehaviour
         ring.gameObject.GetComponentInChildren<Renderer>().material.SetColor("_EmissionColor", new Color(0.1f, 0.1f, 0.1f));
     }
 
+
+
     public void SpawnProteins()
     {
         Debug.Log(this.name);
 
-        //First docking
-        if (this.name == "Protein_1_I")
+        for (int i = 0; i < spawnAmountProtein_1; i++)
         {
-            for (int i = 0; i < spawnAmountProtein_1; i++)
+            Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
+            if (proteinToSpawn != null)
             {
-                Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
-                if (proteinToSpawn != null)
-                {
-                    Instantiate(proteinToSpawn, pos, Quaternion.identity);
-                }
+                Instantiate(proteinToSpawn, pos, Quaternion.identity);
             }
-            for (int i = 0; i < spawnAmountProtein_2; i++)
+        }
+        for (int i = 0; i < spawnAmountProtein_2; i++)
+        {
+            Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
+            if (proteinToSpawn2 != null)
             {
-                Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
-                if (proteinToSpawn2 != null)
-                {
-                    Instantiate(proteinToSpawn2, pos, Quaternion.identity);
-                }
+                Instantiate(proteinToSpawn2, pos, Quaternion.identity);
             }
         }
     }
