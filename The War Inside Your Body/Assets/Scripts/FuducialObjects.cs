@@ -31,6 +31,10 @@ public class FuducialObjects : MonoBehaviour
 
     public GameObject proteinToAnimate;
 
+    private GameObject collidingProtein;
+    public Color connectionColor = new Color(1f, 0.7843137f, 0f);
+    public float connectionColorIntensity = 6;
+
 
     private void Start()
     {
@@ -149,6 +153,8 @@ public class FuducialObjects : MonoBehaviour
 
     public void OnConnection(GameObject otherProtein)
     {
+        collidingProtein = otherProtein;
+
         //Disable the fuducial object
         DisableFuducialObject();
 
@@ -177,16 +183,18 @@ public class FuducialObjects : MonoBehaviour
     public void DisableFuducialObject()
     {
         isDisabled = true;
-        //Disable ring when connection is made
-        ring.gameObject.GetComponentInChildren<Renderer>().material.SetColor("_EmissionColor", new Color(0.1f, 0.1f, 0.1f));
-    }
 
+        //Set color of ring after a connection is made
+        ring.gameObject.GetComponentInChildren<Renderer>().material.SetColor("_EmissionColor", connectionColor * connectionColorIntensity);
+
+        if (collidingProtein.GetComponent<FuducialObjects>() == null)
+            collidingProtein.gameObject.transform.GetChild(1).gameObject.GetComponentInChildren<Renderer>().material.SetColor
+                ("_EmissionColor", connectionColor * connectionColorIntensity);
+    }
 
 
     public void SpawnProteins()
     {
-        Debug.Log(this.name);
-
         for (int i = 0; i < spawnAmountProtein_1; i++)
         {
             Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
