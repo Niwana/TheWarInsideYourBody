@@ -11,6 +11,7 @@ public class VideoScript : MonoBehaviour
     public GameObject IntroVideo;
     public GameObject OutroVideo;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,9 @@ public class VideoScript : MonoBehaviour
     {
         VideoCanvas.SetActive(false);
         IntroVideo.SetActive(false);
+
+        GameObject protein = GameObject.Find("protein_Root_V");
+        protein.GetComponent<Animator>().SetTrigger("playFlyIn");
     }
 
     void OutroVideoOver(UnityEngine.Video.VideoPlayer vp)
