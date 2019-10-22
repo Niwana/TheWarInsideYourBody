@@ -243,7 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDisabled: 0
-  ringSizeSpeed: 0.1
   targetRingMaxSize: 200
   targetRingMinSize: 100
   proteinToSpawn: {fileID: 6940247097242390213, guid: cf310356f72974f48830bf4bba7239da,
@@ -252,10 +251,12 @@ MonoBehaviour:
   spawnAmountProtein_1: 1
   spawnAmountProtein_2: 0
   matchTargetPosition: {x: -20, y: 0, z: -7}
-  matchTargetRotation: {x: 0, y: 0, z: 0}
+  matchTargetRotation: {x: 0, y: 0, z: 1}
   line: {fileID: 6966317610071580535, guid: 3beef0c5ae47e4890b3e47d928d9c126, type: 3}
   proteinToAnimate: {fileID: 1642605465824493315, guid: 6aecd828d8ba4814ca74009954c5ea54,
     type: 3}
+  connectionColor: {r: 1, g: 0.7843137, b: 0, a: 1}
+  connectionColorIntensity: 6
 --- !u!65 &2037087793379819866
 BoxCollider:
   m_ObjectHideFlags: 0

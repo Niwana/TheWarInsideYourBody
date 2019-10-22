@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Marker
   - IntroMovie
+  - Root
   layers:
   - Default
   - TransparentFX

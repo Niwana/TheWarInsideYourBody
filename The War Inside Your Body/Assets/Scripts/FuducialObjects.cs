@@ -9,7 +9,7 @@ public class FuducialObjects : MonoBehaviour
     private GameObject ring;
     public bool isDisabled = false;
 
-    public float ringSizeSpeed = 1f;
+    private float ringSizeSpeed = 5f;
     private float startScale;
     public float targetRingMaxSize = 200;
     public float targetRingMinSize = 100;
@@ -168,7 +168,12 @@ public class FuducialObjects : MonoBehaviour
             SpawnConnectionLine(otherProtein.GetComponent<FuducialObjects>().matchTargetPosition);
         else
             SpawnConnectionLine(otherProtein.transform.position); //If it is a root protein
-        
+
+        Debug.Log(otherProtein.name);
+        if (otherProtein.name == "protein_3_I(Clone)")
+        {
+            GameObject.FindGameObjectWithTag("Root").transform.position = new Vector3(4.83f, 0f, -23.16f);
+        }
 
         foreach (var marker in markers)
         {

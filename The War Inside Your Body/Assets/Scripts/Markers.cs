@@ -26,5 +26,16 @@ public class Markers : MonoBehaviour
 
             parent.GetComponent<FuducialObjects>().OnConnection(other.gameObject.GetComponent<Markers>().parent);
         }
+
+        /*
+        if (other.name == targetMarker)
+        {
+            //Make marker invisible to show connection instead
+            this.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
+
+            parent.GetComponent<FuducialObjects>().OnConnection(other.gameObject.GetComponent<Markers>().parent);
+        }
+        */
     }
 }
