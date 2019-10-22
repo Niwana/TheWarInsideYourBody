@@ -36,7 +36,7 @@ public class CameraCalibrator : MonoBehaviour
 
     public void SaveCameraSettings()
     {
-        Debug.Log("X SLider:" + xPosSlider.GetComponent<Slider>().value);
+        //Debug.Log("X SLider:" + xPosSlider.GetComponent<Slider>().value);
 
         float xPos0 = xPosSlider.GetComponent<Slider>().value;
         float yPos0 = yPosSlider.GetComponent<Slider>().value;

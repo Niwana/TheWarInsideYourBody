@@ -8,6 +8,8 @@ public class ProteinAudioScript : MonoBehaviour
     public float transpose = 0;  // transpose in semitones
 
 
+    public void CallbackTest(GameObject thiis, GameObject that) { Debug.Log("protein1: " + thiis.name + ". proetin2: " + that.name) ; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,10 @@ public class ProteinAudioScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+    }
+
+    public void PlayPing()
     {
         //taken from aldonaletto's code snippet on unity answers
         //https://answers.unity.com/questions/141771/whats-a-good-way-to-do-dynamically-generated-music.html
@@ -31,12 +37,8 @@ public class ProteinAudioScript : MonoBehaviour
         // 0=c4, 2=d4, 4=e4, 7=g4, 9=a4, 12=c5, 14=d5
 
         //(it's offset by 9 semitones so it's easier to count from C4
-        if(!baseNote.isPlaying) //test
-        {
+        baseNote.pitch = Mathf.Pow(2, (transpose - 9) / 12.0f);
+        baseNote.Play();
 
-            baseNote.pitch = Mathf.Pow(2, (transpose -9) / 12.0f);
-            baseNote.Play();
-
-        }
     }
 }
