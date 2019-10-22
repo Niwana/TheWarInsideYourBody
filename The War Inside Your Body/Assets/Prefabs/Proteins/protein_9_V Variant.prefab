@@ -29,7 +29,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 2ffe3548c54a87a42a0d98efd76688f3,
         type: 3}
       propertyPath: m_Name
-      value: protein_9_V
+      value: protein_9_V Variant
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2ffe3548c54a87a42a0d98efd76688f3,
         type: 3}
