@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc94cd4d018ebc4e99306e73b8ebdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMarker: P3a
+  targetMarker: 
   shownOnConnection: 1
   parent: {fileID: 6940247097242390213}
 --- !u!1 &2615865862273509838
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc94cd4d018ebc4e99306e73b8ebdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMarker: P3a
+  targetMarker: 
   shownOnConnection: 0
   parent: {fileID: 6940247097242390213}
 --- !u!1 &4052586538794960149
@@ -247,15 +247,16 @@ MonoBehaviour:
   ringSizeSpeed: 0.1
   targetRingMaxSize: 200
   targetRingMinSize: 100
-  proteinToSpawn: {fileID: 6940247097242390213, guid: 0be2691b62ce79c4094ee00a334299ed,
+  proteinToSpawn: {fileID: 6940247097242390213, guid: d78c4d70bb9ff6142809a4586130e118,
     type: 3}
-  proteinToSpawn2: {fileID: 0}
+  proteinToSpawn2: {fileID: 6940247097242390213, guid: 1e57154acee7b4a43805b7771ca83df2,
+    type: 3}
   spawnAmountProtein_1: 1
-  spawnAmountProtein_2: 0
+  spawnAmountProtein_2: 1
   matchTargetPosition: {x: -4.79, y: 0, z: -15.5}
   matchTargetRotation: {x: 0, y: 0, z: -1}
   line: {fileID: 6966317610071580535, guid: 3beef0c5ae47e4890b3e47d928d9c126, type: 3}
-  proteinToAnimate: {fileID: 9080673140978004749, guid: 2f54539896cbdd348b7830d1ead411ca,
+  proteinToAnimate: {fileID: 3300763031882621068, guid: b2176ef06d51a044ea13593801b9d792,
     type: 3}
 --- !u!65 &2037087793379819866
 BoxCollider:
@@ -311,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc94cd4d018ebc4e99306e73b8ebdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMarker: P3a
+  targetMarker: P3R
   shownOnConnection: 0
   parent: {fileID: 6940247097242390213}
 --- !u!1 &7164372903736862941
@@ -386,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc94cd4d018ebc4e99306e73b8ebdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMarker: P3a
+  targetMarker: 
   shownOnConnection: 0
   parent: {fileID: 6940247097242390213}
 --- !u!1001 &1426893725348533738

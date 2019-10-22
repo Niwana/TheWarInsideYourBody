@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc94cd4d018ebc4e99306e73b8ebdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMarker: PS
+  targetMarker: PR
   shownOnConnection: 0
   parent: {fileID: 6940247097242390213}
 --- !u!1 &2715914768374931282
@@ -242,7 +242,7 @@ MonoBehaviour:
   matchTargetPosition: {x: -4.79, y: 0, z: -15.5}
   matchTargetRotation: {x: 0, y: 0, z: -1}
   line: {fileID: 6966317610071580535, guid: 3beef0c5ae47e4890b3e47d928d9c126, type: 3}
-  proteinToAnimate: {fileID: 9188404001630248514, guid: aa28d9c635f62e54382ce5aac8be8bc7,
+  proteinToAnimate: {fileID: 7997920087269494798, guid: 1d956088d9d5d6445ac0058a12f5b35c,
     type: 3}
 --- !u!65 &5433607298718495142
 BoxCollider:

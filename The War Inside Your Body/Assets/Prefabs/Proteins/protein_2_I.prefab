@@ -275,10 +275,9 @@ MonoBehaviour:
   ringSizeSpeed: 0.1
   targetRingMaxSize: 200
   targetRingMinSize: 100
-  proteinToSpawn: {fileID: 6940247097242390213, guid: dc6226a83938dd04e88b64dae16dad3f,
-    type: 3}
+  proteinToSpawn: {fileID: 0}
   proteinToSpawn2: {fileID: 0}
-  spawnAmountProtein_1: 1
+  spawnAmountProtein_1: 0
   spawnAmountProtein_2: 0
   matchTargetPosition: {x: -4.79, y: 0, z: -15.5}
   matchTargetRotation: {x: 0, y: 0, z: -1}
