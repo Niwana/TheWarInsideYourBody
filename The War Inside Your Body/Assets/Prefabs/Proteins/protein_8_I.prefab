@@ -252,8 +252,8 @@ MonoBehaviour:
   proteinToSpawn2: {fileID: 0}
   spawnAmountProtein_1: 1
   spawnAmountProtein_2: 0
-  matchTargetPosition: {x: -4.79, y: 0, z: -15.5}
-  matchTargetRotation: {x: 0, y: 0, z: -1}
+  matchTargetPosition: {x: 13, y: 0, z: -7}
+  matchTargetRotation: {x: -1, y: 0, z: 0}
   line: {fileID: 6966317610071580535, guid: 3beef0c5ae47e4890b3e47d928d9c126, type: 3}
   proteinToAnimate: {fileID: 6110214440610792395, guid: 6316c6f5832d1b64c8b415cdbfa98182,
     type: 3}

@@ -22,7 +22,7 @@ public class FuducialObjects : MonoBehaviour
 
     List<GameObject> markers = new List<GameObject>();
 
-    public Vector3 matchTargetPosition = new Vector3(-4.79f, 0f, -15.5f);
+    public Vector3 matchTargetPosition = new Vector3(); //-4.79f, 0f, -15.5f
     public Vector3 matchTargetRotation = Vector3.back;
 
     private Vector3 velocity = Vector3.zero; //var used for movement damping, just leave this
@@ -92,7 +92,8 @@ public class FuducialObjects : MonoBehaviour
         {
             //note/todo: this still triggers the marker collision twice if not perfectly rotated?
             //TODO: not hardcode the target position. i guess you can define it in scene
-            //MoveTo(matchTargetPosition, Quaternion.LookRotation(matchTargetRotation), 0.3f, 180f);
+            MoveTo(matchTargetPosition, Quaternion.LookRotation(matchTargetRotation), 0.3f, 180f);
+            
 
             //Decrease ring size
             if (ring.transform.localScale.x > targetRingMinSize)
@@ -157,7 +158,11 @@ public class FuducialObjects : MonoBehaviour
         PlayAnimation();
 
         //Spawn connection line
-        SpawnConnectionLine(otherProtein.transform.position);
+        if (otherProtein.GetComponent<FuducialObjects>() != null)
+            SpawnConnectionLine(otherProtein.GetComponent<FuducialObjects>().matchTargetPosition);
+        else
+            SpawnConnectionLine(otherProtein.transform.position); //If it is a root protein
+        
 
         foreach (var marker in markers)
         {
@@ -207,16 +212,15 @@ public class FuducialObjects : MonoBehaviour
 
     public void SpawnConnectionLine(Vector3 otherPosition)
     {
-        Vector3 thisPosition = this.gameObject.transform.position;
+        Vector3 thisPosition = matchTargetPosition; //this.gameObject.transform.position;
+        
         Vector3 middlePoint = Vector3.Normalize(otherPosition - thisPosition) + thisPosition;
         line = Instantiate(line);
         line.numCornerVertices = 5;
         line.transform.position = middlePoint;
         line.transform.rotation = Quaternion.LookRotation(Vector3.Normalize(otherPosition - thisPosition));
         line.SetPosition(0, new Vector3(0.0f, 0.0f, 0.0f));
-        line.SetPosition(1, new Vector3(0.0f, 0.0f, Vector3.Distance(transform.position, otherPosition)));
-        Debug.Log(line.GetPosition(0));
-        Debug.Log(line.GetPosition(1));
+        line.SetPosition(1, new Vector3(0.0f, 0.0f, Vector3.Distance(thisPosition, otherPosition)));
     }
 
     public bool getIsOverlapping()

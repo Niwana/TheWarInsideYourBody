@@ -18,7 +18,6 @@ public class Markers : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         if (other.name == targetMarker)
         {
             //Make marker invisible to show connection instead
