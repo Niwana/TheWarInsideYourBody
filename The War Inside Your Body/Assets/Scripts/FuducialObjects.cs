@@ -11,7 +11,7 @@ public class FuducialObjects : MonoBehaviour
     private GameObject ring;
     public bool isDisabled = false;
 
-    public float ringSizeSpeed = 1f;
+    private float ringSizeSpeed = 5f;
     private float startScale;
     public float targetRingMaxSize = 200;
     public float targetRingMinSize = 100;
@@ -24,7 +24,7 @@ public class FuducialObjects : MonoBehaviour
 
     List<GameObject> markers = new List<GameObject>();
 
-    public Vector3 matchTargetPosition = new Vector3(-4.79f, 0f, -15.5f);
+    public Vector3 matchTargetPosition = new Vector3(); //-4.79f, 0f, -15.5f
     public Vector3 matchTargetRotation = Vector3.back;
 
     private Vector3 velocity = Vector3.zero; //var used for movement damping, just leave this
@@ -32,6 +32,10 @@ public class FuducialObjects : MonoBehaviour
     public LineRenderer line;
 
     public GameObject proteinToAnimate;
+
+    private GameObject collidingProtein;
+    public Color connectionColor = new Color(1f, 0.7843137f, 0f);
+    public float connectionColorIntensity = 6;
 
 
     private void Start()
@@ -94,7 +98,8 @@ public class FuducialObjects : MonoBehaviour
         {
             //note/todo: this still triggers the marker collision twice if not perfectly rotated?
             //TODO: not hardcode the target position. i guess you can define it in scene
-            //MoveTo(matchTargetPosition, Quaternion.LookRotation(matchTargetRotation), 0.3f, 180f);
+            MoveTo(matchTargetPosition, Quaternion.LookRotation(matchTargetRotation), 0.3f, 180f);
+            
 
             //Decrease ring size
             if (ring.transform.localScale.x > targetRingMinSize)
@@ -159,6 +164,8 @@ public class FuducialObjects : MonoBehaviour
 
     public void OnConnection(GameObject otherProtein)
     {
+        collidingProtein = otherProtein;
+
         //Disable the fuducial object
         DisableFuducialObject();
 
@@ -173,7 +180,29 @@ public class FuducialObjects : MonoBehaviour
 
 
         //Spawn connection line
-        SpawnConnectionLine(otherProtein.transform.position);
+        if (otherProtein.GetComponent<FuducialObjects>() != null && gameObject.name != "protein_9_I(Clone)")
+            SpawnConnectionLine(otherProtein.GetComponent<FuducialObjects>().matchTargetPosition);
+        else if (gameObject.name != "protein_9_I(Clone)")
+            SpawnConnectionLine(otherProtein.transform.position); //If it is a root protein
+
+        //Spawn the second root protein after P3 has connected
+        if (otherProtein.name == "protein_3_I(Clone)")
+        {
+            GameObject.FindGameObjectWithTag("Root").transform.position = new Vector3(4.83f, 0f, -23.16f);
+        }
+
+
+        //Protein 9 special
+        if (gameObject.name == "protein_9_I(Clone)")
+        {
+            foreach (var marker in markers)
+            {
+                marker.SetActive(false);
+            }
+            SpawnConnectionLine(new Vector3(5, 0, -15));
+            SpawnConnectionLine(new Vector3(-3, 0, -7));
+            SpawnConnectionLine(new Vector3(13, 0, -7));
+        }
 
         foreach (var marker in markers)
         {
@@ -188,16 +217,18 @@ public class FuducialObjects : MonoBehaviour
     public void DisableFuducialObject()
     {
         isDisabled = true;
-        //Disable ring when connection is made
-        ring.gameObject.GetComponentInChildren<Renderer>().material.SetColor("_EmissionColor", new Color(0.1f, 0.1f, 0.1f));
-    }
 
+        //Set color of ring after a connection is made
+        ring.gameObject.GetComponentInChildren<Renderer>().material.SetColor("_EmissionColor", connectionColor * connectionColorIntensity);
+
+        if (collidingProtein.GetComponent<FuducialObjects>() == null)
+            collidingProtein.gameObject.transform.GetChild(1).gameObject.GetComponentInChildren<Renderer>().material.SetColor
+                ("_EmissionColor", connectionColor * connectionColorIntensity);
+    }
 
 
     public void SpawnProteins()
     {
-        Debug.Log(this.name);
-
         for (int i = 0; i < spawnAmountProtein_1; i++)
         {
             Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
@@ -223,16 +254,15 @@ public class FuducialObjects : MonoBehaviour
 
     public void SpawnConnectionLine(Vector3 otherPosition)
     {
-        Vector3 thisPosition = this.gameObject.transform.position;
+        Vector3 thisPosition = matchTargetPosition; //this.gameObject.transform.position;
+        
         Vector3 middlePoint = Vector3.Normalize(otherPosition - thisPosition) + thisPosition;
         line = Instantiate(line);
         line.numCornerVertices = 5;
         line.transform.position = middlePoint;
         line.transform.rotation = Quaternion.LookRotation(Vector3.Normalize(otherPosition - thisPosition));
         line.SetPosition(0, new Vector3(0.0f, 0.0f, 0.0f));
-        line.SetPosition(1, new Vector3(0.0f, 0.0f, Vector3.Distance(transform.position, otherPosition)));
-        Debug.Log(line.GetPosition(0));
-        Debug.Log(line.GetPosition(1));
+        line.SetPosition(1, new Vector3(0.0f, 0.0f, Vector3.Distance(thisPosition, otherPosition)));
     }
 
     public bool getIsOverlapping()
