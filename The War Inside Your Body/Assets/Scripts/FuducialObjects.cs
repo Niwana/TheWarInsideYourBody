@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class FuducialObjects : MonoBehaviour
 {
@@ -103,6 +105,10 @@ public class FuducialObjects : MonoBehaviour
         }
     }
 
+    [System.Serializable]
+    public class GrabEvent : UnityEvent<GameObject> { }
+    public GrabEvent OnGrab = new GrabEvent();
+
     private void OnTriggerEnter(Collider other)
     {
         isOverlapping = true;
@@ -112,6 +118,7 @@ public class FuducialObjects : MonoBehaviour
             collidingFuducial = other;
 
             ActivateMarkers();
+            OnGrab.Invoke(this.gameObject);
         }
     }
 
@@ -146,6 +153,10 @@ public class FuducialObjects : MonoBehaviour
     }
 
 
+    [System.Serializable]
+    public class ConnectionEvent : UnityEvent<GameObject, GameObject> { }
+    public ConnectionEvent OnConnMatch;// = new ConnectionEvent();
+
     public void OnConnection(GameObject otherProtein)
     {
         //Disable the fuducial object
@@ -155,6 +166,11 @@ public class FuducialObjects : MonoBehaviour
         SpawnProteins();
 
         PlayAnimation();
+
+        //object.OnConnMatch += handler; public void handler(GameObject protein1, GameObject protein2){}
+        Debug.Log("invoking callback");
+        OnConnMatch.Invoke(this.gameObject, otherProtein);
+
 
         //Spawn connection line
         SpawnConnectionLine(otherProtein.transform.position);
