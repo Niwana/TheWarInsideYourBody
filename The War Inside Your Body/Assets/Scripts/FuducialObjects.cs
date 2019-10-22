@@ -164,15 +164,28 @@ public class FuducialObjects : MonoBehaviour
         PlayAnimation();
 
         //Spawn connection line
-        if (otherProtein.GetComponent<FuducialObjects>() != null)
+        if (otherProtein.GetComponent<FuducialObjects>() != null && gameObject.name != "protein_9_I(Clone)")
             SpawnConnectionLine(otherProtein.GetComponent<FuducialObjects>().matchTargetPosition);
-        else
+        else if (gameObject.name != "protein_9_I(Clone)")
             SpawnConnectionLine(otherProtein.transform.position); //If it is a root protein
 
-        Debug.Log(otherProtein.name);
+        //Spawn the second root protein after P3 has connected
         if (otherProtein.name == "protein_3_I(Clone)")
         {
             GameObject.FindGameObjectWithTag("Root").transform.position = new Vector3(4.83f, 0f, -23.16f);
+        }
+
+
+        //Protein 9 special
+        if (gameObject.name == "protein_9_I(Clone)")
+        {
+            foreach (var marker in markers)
+            {
+                marker.SetActive(false);
+            }
+            SpawnConnectionLine(new Vector3(5, 0, -15));
+            SpawnConnectionLine(new Vector3(-3, 0, -7));
+            SpawnConnectionLine(new Vector3(13, 0, -7));
         }
 
         foreach (var marker in markers)

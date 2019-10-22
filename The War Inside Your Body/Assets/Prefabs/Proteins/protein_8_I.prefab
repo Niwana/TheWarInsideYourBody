@@ -244,7 +244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDisabled: 0
-  ringSizeSpeed: 0.1
   targetRingMaxSize: 200
   targetRingMinSize: 100
   proteinToSpawn: {fileID: 6940247097242390213, guid: 97357382fc4fbcf4e838b85b781a5f55,
@@ -257,6 +256,8 @@ MonoBehaviour:
   line: {fileID: 6966317610071580535, guid: 3beef0c5ae47e4890b3e47d928d9c126, type: 3}
   proteinToAnimate: {fileID: 6110214440610792395, guid: 6316c6f5832d1b64c8b415cdbfa98182,
     type: 3}
+  connectionColor: {r: 1, g: 0.7843137, b: 0, a: 1}
+  connectionColorIntensity: 6
 --- !u!65 &2037087793379819866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -297,7 +298,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 0.1}
+  m_Size: {x: 0.2, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1986518059206311936
 MonoBehaviour:
@@ -372,7 +373,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 0.1}
+  m_Size: {x: 0.2, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6410734168683380536
 MonoBehaviour:
