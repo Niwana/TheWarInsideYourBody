@@ -5,18 +5,17 @@ using UnityEngine;
 public class AudioEventScript : MonoBehaviour
 {
 
-    public AudioSource narration1;
-    public AudioSource narration2;
-    public AudioSource narration3;
-    public AudioSource narration4;
-    public AudioSource narration5;
-    public AudioSource narration6;
-    public AudioSource narration7;
+    public AudioSource MembraneNarrative;
+    public AudioSource P0Narrative;
+    public AudioSource P1Narrative;
+    public AudioSource P3Narrative;
+    public AudioSource P8Narrative;
+    public AudioSource P9Narrative;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        MembraneNarrative.Play();
     }
 
     // Update is called once per frame

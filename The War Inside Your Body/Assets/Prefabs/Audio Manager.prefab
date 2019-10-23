@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2589326239034005979}
   - component: {fileID: 2589326239034005976}
   - component: {fileID: 2589326239034005977}
-  - component: {fileID: 5978231126889328009}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -80,7 +79,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -162,24 +161,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5978231126889328009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2589326239034005983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bd11a88725a9644ba1bdcae1e253e68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  basePing: {fileID: 0}
-  pitchPing: {fileID: 0}
-  narration1: {fileID: 0}
-  narration2: {fileID: 0}
-  narration3: {fileID: 0}
-  narration4: {fileID: 0}
-  narration5: {fileID: 0}
-  narration6: {fileID: 0}
-  narration7: {fileID: 0}
