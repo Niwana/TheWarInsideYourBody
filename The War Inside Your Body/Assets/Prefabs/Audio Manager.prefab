@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2589326239034005979}
   - component: {fileID: 2589326239034005976}
   - component: {fileID: 2589326239034005977}
+  - component: {fileID: -8647532514257386357}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -161,3 +162,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8647532514257386357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589326239034005983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd11a88725a9644ba1bdcae1e253e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MembraneNarrative: {fileID: 811510482093232884, guid: c7ee5075947496446af020399303e266,
+    type: 3}
+  P0Narrative: {fileID: 2827355485928740445, guid: c7ee5075947496446af020399303e266,
+    type: 3}
+  P1Narrative: {fileID: 1495125835868524137, guid: c7ee5075947496446af020399303e266,
+    type: 3}
+  P3Narrative: {fileID: 6582612472247862888, guid: c7ee5075947496446af020399303e266,
+    type: 3}
+  P8Narrative: {fileID: 6482242548488139674, guid: c7ee5075947496446af020399303e266,
+    type: 3}
+  P9Narrative: {fileID: 7227121494502490422, guid: c7ee5075947496446af020399303e266,
+    type: 3}

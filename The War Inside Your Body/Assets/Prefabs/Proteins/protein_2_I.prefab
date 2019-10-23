@@ -290,7 +290,7 @@ MonoBehaviour:
   OnGrab:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5978231126889328009, guid: dde89a2319ead2b4e8b980b6dbe50d05,
+      - m_Target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
           type: 3}
         m_MethodName: ProteinGrabHandler
         m_Mode: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   OnConnMatch:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5978231126889328009, guid: dde89a2319ead2b4e8b980b6dbe50d05,
+      - m_Target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
           type: 3}
         m_MethodName: ProteinConnectHandler
         m_Mode: 0
@@ -553,6 +553,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3958046506013238247}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: f1a96f500267ff84e8610188354b647f,
+        type: 3}
+      propertyPath: m_Name
+      value: P2b
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f1a96f500267ff84e8610188354b647f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -607,11 +612,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: f1a96f500267ff84e8610188354b647f,
-        type: 3}
-      propertyPath: m_Name
-      value: P2b
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: f1a96f500267ff84e8610188354b647f,
         type: 3}
