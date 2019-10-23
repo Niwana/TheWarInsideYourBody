@@ -6,7 +6,6 @@ public class VideoScript : MonoBehaviour
 {
 
     public bool PlayIntroVideo = false;
-    public bool PlayOutroVideo = false;
     public GameObject VideoCanvas;
     public GameObject IntroVideo;
     public GameObject OutroVideo;
@@ -22,15 +21,6 @@ public class VideoScript : MonoBehaviour
 
             IntroVideo.GetComponent<UnityEngine.Video.VideoPlayer>().loopPointReached += IntroVideoOver;
         }
-
-        //Temporary code to test playing outro, instead PlayOutroVideo should be called when appropriate
-        if (PlayOutroVideo)
-        {
-            VideoCanvas.SetActive(true);
-            OutroVideo.SetActive(true);
-
-            OutroVideo.GetComponent<UnityEngine.Video.VideoPlayer>().loopPointReached += OutroVideoOver;
-        }
     }
 
     // Update is called once per frame
@@ -44,6 +34,8 @@ public class VideoScript : MonoBehaviour
         VideoCanvas.SetActive(false);
         IntroVideo.SetActive(false);
 
+        GameObject.Find("Audio Manager").GetComponent<AudioEventScript>().OnIntroVideoOver();
+
         GameObject protein = GameObject.Find("protein_Root_V");
         protein.GetComponent<Animator>().SetTrigger("playFlyIn");
     }
@@ -52,9 +44,11 @@ public class VideoScript : MonoBehaviour
     {
         VideoCanvas.SetActive(false);
         OutroVideo.SetActive(false);
+
+        Application.Quit();
     }
 
-    void PlayOutrovideo()
+    public void PlayOutroVideo()
     {
         VideoCanvas.SetActive(true);
         OutroVideo.SetActive(true);

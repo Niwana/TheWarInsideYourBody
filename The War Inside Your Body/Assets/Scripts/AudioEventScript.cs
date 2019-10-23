@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioEventScript : MonoBehaviour
 {
 
+    public AudioSource BackgroundMusic;
     public AudioSource MembraneNarrative;
     public AudioSource P0Narrative;
     public AudioSource P1Narrative;
@@ -15,7 +16,7 @@ public class AudioEventScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MembraneNarrative.Play();
+        
     }
 
     // Update is called once per frame
@@ -33,11 +34,20 @@ public class AudioEventScript : MonoBehaviour
         protein0.GetComponent<ProteinAudioScript>().PlayPing();
         protein1.GetComponent<ProteinAudioScript>().PlayPing();
 
-        //Debug.Log("protein connect! " + protein0.name + " and " + protein1.name);
+        Debug.Log("protein connect! " + protein0.name + " and " + protein1.name);
         if (protein0.name.StartsWith("Protein_1") && protein1.name.StartsWith("StartProtein"))
         {
-            //do stuff: play narration
             P1Narrative.Play();
+        } else if (protein0.name.StartsWith("protein_3") && protein1.name.StartsWith("protein_2"))
+        {
+            P3Narrative.Play();
+        } else if (protein0.name.StartsWith("protein_8") && protein1.name.StartsWith("protein_6"))
+        {
+            P8Narrative.Play();
+        } else if (protein0.name.StartsWith("protein_9"))
+        {
+            P9Narrative.Play();
+            StartCoroutine(PlayOutro(P9Narrative.clip.length + 1f));
         }
     }
 
@@ -47,6 +57,19 @@ public class AudioEventScript : MonoBehaviour
 
     }
 
+    public void OnIntroVideoOver()
+    {
+        BackgroundMusic.Play();
+        MembraneNarrative.PlayDelayed(1f);
+        P0Narrative.PlayDelayed(7f);
+    }
 
+    IEnumerator PlayOutro(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        BackgroundMusic.Stop();
+        GameObject.Find("GameManager").GetComponent<VideoScript>().PlayOutroVideo();
+    }
 
 }
