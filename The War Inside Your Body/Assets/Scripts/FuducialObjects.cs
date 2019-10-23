@@ -55,6 +55,7 @@ public class FuducialObjects : MonoBehaviour
                 child.GetChild(0).gameObject.SetActive(false);
             }
         }
+        OnConnMatch.AddListener(GameObject.Find("Audio Manager").GetComponent<AudioEventScript>().ProteinConnectHandler);
     }
 
 

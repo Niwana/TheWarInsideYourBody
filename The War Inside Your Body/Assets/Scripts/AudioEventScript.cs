@@ -37,7 +37,7 @@ public class AudioEventScript : MonoBehaviour
         if (protein0.name.StartsWith("Protein_1") && protein1.name.StartsWith("StartProtein"))
         {
             //do stuff: play narration
-            P0Narrative.Play();
+            P1Narrative.Play();
         }
     }
 
