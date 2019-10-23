@@ -33,11 +33,11 @@ public class AudioEventScript : MonoBehaviour
         protein0.GetComponent<ProteinAudioScript>().PlayPing();
         protein1.GetComponent<ProteinAudioScript>().PlayPing();
 
-
-        if (protein0.name.StartsWith("protein_1") && protein1.name.StartsWith("protein_2"))
+        //Debug.Log("protein connect! " + protein0.name + " and " + protein1.name);
+        if (protein0.name.StartsWith("Protein_1") && protein1.name.StartsWith("StartProtein"))
         {
             //do stuff: play narration
-            
+            P0Narrative.Play();
         }
     }
 
