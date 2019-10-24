@@ -38,7 +38,9 @@ public class FuducialObjects : MonoBehaviour
     public Color connectionColor = new Color(1f, 0.7843137f, 0f);
     public float connectionColorIntensity = 6;
 
-    public float MinSpawnDistance = 3f;
+    public static float MinSpawnDistance = 3f;
+    public Vector3 SpawnPosition;
+    private bool SpawnPositionReached = true;
 
 
     private void Start()
@@ -109,6 +111,15 @@ public class FuducialObjects : MonoBehaviour
                 ring.transform.localScale -= new Vector3(ringSizeSpeed, ringSizeSpeed, ringSizeSpeed);
 
             }
+        }
+
+        if(Vector3.Distance(transform.position, SpawnPosition) < 0.2f)
+        {
+            SpawnPositionReached = true;
+        }
+        if(!SpawnPositionReached)
+        {
+            MoveTo(SpawnPosition, Quaternion.LookRotation(Vector3.back), 1f, 20f);
         }
     }
 
@@ -231,12 +242,15 @@ public class FuducialObjects : MonoBehaviour
 
     public void SpawnProteins()
     {
+        Vector3 offScreenSpawnPosition = new Vector3(-1f, 0f, 10f);
         for (int i = 0; i < spawnAmountProtein_1; i++)
         {
             Vector3 pos = FindSpawnPosition();
             if (proteinToSpawn != null)
             {
-                Instantiate(proteinToSpawn, pos, Quaternion.identity);
+                GameObject spawnedProtein = Instantiate(proteinToSpawn, offScreenSpawnPosition, Quaternion.identity);
+                spawnedProtein.GetComponent<FuducialObjects>().SpawnPosition = pos;
+                spawnedProtein.GetComponent<FuducialObjects>().SpawnPositionReached = false;
             }
         }
         for (int i = 0; i < spawnAmountProtein_2; i++)
@@ -244,7 +258,9 @@ public class FuducialObjects : MonoBehaviour
             Vector3 pos = FindSpawnPosition();
             if (proteinToSpawn2 != null)
             {
-                Instantiate(proteinToSpawn2, pos, Quaternion.identity);
+                GameObject spawnedProtein = Instantiate(proteinToSpawn2, offScreenSpawnPosition, Quaternion.identity);
+                spawnedProtein.GetComponent<FuducialObjects>().SpawnPosition = pos;
+                spawnedProtein.GetComponent<FuducialObjects>().SpawnPositionReached = false;
             }
         }
     }
@@ -264,14 +280,13 @@ public class FuducialObjects : MonoBehaviour
         bool suitablePosition = false;
         while (!suitablePosition)
         {
-            pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
+            pos = new Vector3(Random.Range(-18, 14), 0f, Random.Range(-2, 0));
             suitablePosition = true;
             foreach (Vector3 existingPosition in tableProteinPositions)
             {
                 if(Vector3.Distance(pos, existingPosition) < MinSpawnDistance)
                 {
                     suitablePosition = false;
-                    Debug.Log("Changing Spawn position");
                 }
             }
         }
