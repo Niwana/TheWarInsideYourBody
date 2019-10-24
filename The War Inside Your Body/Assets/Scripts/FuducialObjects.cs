@@ -14,8 +14,8 @@ public class FuducialObjects : MonoBehaviour
 
     private float ringSizeSpeed = 5f;
     private float startScale;
-    public float targetRingMaxSize = 200;
-    public float targetRingMinSize = 100;
+    public float targetRingMaxSize = 300;
+    public float targetRingMinSize = 150;
 
     public GameObject proteinToSpawn;
     public GameObject proteinToSpawn2;
@@ -49,7 +49,9 @@ public class FuducialObjects : MonoBehaviour
 
         proteinToAnimate = GameObject.Find(proteinToAnimate.name);
 
-        startScale = ring.transform.localScale.x;
+        startScale = ring.transform.localScale.x*1.5f;
+        ring.transform.localScale = new Vector3(startScale, startScale, startScale);
+        targetRingMaxSize = 300;
 
         //Save all markers in a list and disable them at start
         foreach (Transform child in transform)
@@ -74,7 +76,8 @@ public class FuducialObjects : MonoBehaviour
             {
                 if (collidingFuducial.transform.position.x <= transform.position.x + 1000) //put range for safety
                 {
-                    MoveTo(collidingFuducial.transform.position, collidingFuducial.transform.rotation, 0.02f, 360);
+                    MoveTo(collidingFuducial.transform.position, collidingFuducial.transform.rotation, 0.03f, 180);
+                    SpawnPositionReached = true;
                 }
             }
         }
@@ -119,7 +122,7 @@ public class FuducialObjects : MonoBehaviour
         }
         if(!SpawnPositionReached)
         {
-            MoveTo(SpawnPosition, Quaternion.LookRotation(Vector3.back), 1f, 20f);
+            MoveTo(SpawnPosition, Quaternion.LookRotation(Vector3.back), 2f, 20f);
         }
 
         //Add animation to marker on activate
