@@ -121,6 +121,13 @@ public class FuducialObjects : MonoBehaviour
         {
             MoveTo(SpawnPosition, Quaternion.LookRotation(Vector3.back), 1f, 20f);
         }
+
+        //Add animation to marker on activate
+        foreach (var marker in markers)
+        {
+            if (marker.activeSelf)
+                IncreaseSize(marker);
+        }
     }
 
     [System.Serializable]
@@ -155,6 +162,9 @@ public class FuducialObjects : MonoBehaviour
     {
         foreach (var marker in markers)
         {
+            marker.transform.localScale = new Vector3(0, 0, 0); //Set the scale to 0 so that the increase 
+                                                                //size animation plays each time
+
             if (!marker.GetComponent<Markers>().shownOnConnection)
             {
                 marker.SetActive(true);
@@ -321,6 +331,16 @@ public class FuducialObjects : MonoBehaviour
     {
         isOverlapping = _bool;
         return isOverlapping;
+    }
+
+
+    private void IncreaseSize(GameObject _object)
+    {
+        if (_object.transform.localScale.x <= 1)
+        {
+            Debug.Log(_object.transform.localScale.x);
+            _object.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+        }
     }
 
 
