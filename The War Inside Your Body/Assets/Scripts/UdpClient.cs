@@ -17,6 +17,7 @@ public class UdpClient : MonoBehaviour , TuioListener
     private Dictionary<long, GameObject> gameObjectList;
 
     public GameObject fuducialObject;
+    public bool showDebugRectangle;
 
     // Start is called before the first frame update
     void Start()
@@ -66,18 +67,11 @@ public class UdpClient : MonoBehaviour , TuioListener
     {
         GameObject protein = new GameObject();
 
-        if (tuioObject.SymbolID == 5)
+        if (tuioObject.SymbolID == 1 || tuioObject.SymbolID == 2 || tuioObject.SymbolID == 3
+            || tuioObject.SymbolID == 4 || tuioObject.SymbolID == 5)
+        {
             protein = Instantiate(fuducialObject);
-
-        if (tuioObject.SymbolID == 122)
-            protein = Instantiate(fuducialObject);
-
-        if (tuioObject.SymbolID == 115)
-            protein = Instantiate(fuducialObject);
-        
-        if (tuioObject.SymbolID == 1)
-            protein = Instantiate(fuducialObject);
-
+        }
 
         gameObjectList.Add(tuioObject.SymbolID, protein);
     }
