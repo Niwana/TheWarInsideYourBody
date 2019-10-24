@@ -241,6 +241,9 @@ public class FuducialObjects : MonoBehaviour
             //Play punching animation
             GameObject protein6 = GameObject.Find("protein_6_V");
             protein6.GetComponent<Animator>().SetTrigger("playPunch");
+
+            GameObject membrane = GameObject.Find("Membrane");
+            membrane.GetComponent<Animator>().SetTrigger("playDestruction");
         }
 
     }
