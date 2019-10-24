@@ -30,8 +30,16 @@ public class UdpClient : MonoBehaviour , TuioListener
         client.addTuioListener(this);
 
         client.connect();
+        
 
         gameObjectList = new Dictionary<long, GameObject>(128);
+        Debug.Log("tuio client connected");
+    }
+
+    void OnDestroy()
+    {
+        client.removeAllTuioListeners();
+        client.disconnect();
     }
 
     // Update is called once per frame
@@ -85,7 +93,7 @@ public class UdpClient : MonoBehaviour , TuioListener
         {
             objectList.Add(o.SessionID, o);
         }
-        //Debug.Log("add obj " + o.SymbolID + " (" + o.SessionID + ") " + o.X + " " + o.Y + " " + o.Angle);
+        Debug.Log("add obj " + o.SymbolID + " (" + o.SessionID + ") " + o.X + " " + o.Y + " " + o.Angle);
     }
 
     public void updateTuioObject(TuioObject o)
@@ -104,7 +112,7 @@ public class UdpClient : MonoBehaviour , TuioListener
             objectList.Remove(o.SessionID);
             gameObjectList.Remove(o.SessionID);
         }
-        //Debug.Log("del obj " + o.SymbolID + " (" + o.SessionID + ")");
+        Debug.Log("del obj " + o.SymbolID + " (" + o.SessionID + ")");
     }
 
     public void addTuioCursor(TuioCursor c)

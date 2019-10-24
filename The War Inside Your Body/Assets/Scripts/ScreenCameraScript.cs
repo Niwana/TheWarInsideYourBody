@@ -8,7 +8,7 @@ public class ScreenCameraScript : MonoBehaviour
     void Start()
     {
         //activate the screen to be used, with resolution
-        Display.displays[2].Activate();
+        //Display.displays[2].Activate();
 
     }
 
