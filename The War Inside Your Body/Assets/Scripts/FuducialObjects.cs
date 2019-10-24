@@ -38,6 +38,7 @@ public class FuducialObjects : MonoBehaviour
     public Color connectionColor = new Color(1f, 0.7843137f, 0f);
     public float connectionColorIntensity = 6;
 
+    public float MinSpawnDistance = 3f;
 
 
     private void Start()
@@ -232,7 +233,7 @@ public class FuducialObjects : MonoBehaviour
     {
         for (int i = 0; i < spawnAmountProtein_1; i++)
         {
-            Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
+            Vector3 pos = FindSpawnPosition();
             if (proteinToSpawn != null)
             {
                 Instantiate(proteinToSpawn, pos, Quaternion.identity);
@@ -240,12 +241,42 @@ public class FuducialObjects : MonoBehaviour
         }
         for (int i = 0; i < spawnAmountProtein_2; i++)
         {
-            Vector3 pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
+            Vector3 pos = FindSpawnPosition();
             if (proteinToSpawn2 != null)
             {
                 Instantiate(proteinToSpawn2, pos, Quaternion.identity);
             }
         }
+    }
+
+    private Vector3 FindSpawnPosition()
+    {
+        GameObject[] tableProteins = GameObject.FindGameObjectsWithTag("TableProtein");
+        Vector3[] tableProteinPositions = new Vector3[tableProteins.Length];
+
+        for (int i = 0; i < tableProteins.Length; i++)
+        {
+            tableProteinPositions[i] = tableProteins[i].transform.position;
+        }
+
+        Vector3 pos = new Vector3(0f, 0f, 0f);
+
+        bool suitablePosition = false;
+        while (!suitablePosition)
+        {
+            pos = new Vector3(Random.Range(-20, 10), 0f, Random.Range(-2, 0));
+            suitablePosition = true;
+            foreach (Vector3 existingPosition in tableProteinPositions)
+            {
+                if(Vector3.Distance(pos, existingPosition) < MinSpawnDistance)
+                {
+                    suitablePosition = false;
+                    Debug.Log("Changing Spawn position");
+                }
+            }
+        }
+
+        return pos;
     }
 
     public void PlayAnimation()
