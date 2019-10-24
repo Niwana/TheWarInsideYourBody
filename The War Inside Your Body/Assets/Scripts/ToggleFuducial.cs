@@ -6,6 +6,9 @@ public class ToggleFuducial : MonoBehaviour
 {
     public bool enablePlane = false;
 
+    [HideInInspector]
+    public bool isAttached = false;
+
     // Start is called before the first frame update
     void Start()
     {

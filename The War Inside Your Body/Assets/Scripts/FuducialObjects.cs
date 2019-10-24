@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+//using System.Text.RegularExpressions;
 
 public class FuducialObjects : MonoBehaviour
 {
@@ -143,22 +144,33 @@ public class FuducialObjects : MonoBehaviour
 
         if ((other.gameObject.name == "FuducialObject(Clone)" || other.gameObject.name == "FuducialObject") && !isDisabled)
         {
-            collidingFuducial = other;
+            if (other.gameObject.GetComponent<ToggleFuducial>().isAttached == false)
+            {
+                other.gameObject.GetComponent<ToggleFuducial>().isAttached = true;
 
-            ActivateMarkers();
-            OnGrab.Invoke(this.gameObject);
+                collidingFuducial = other;
+
+                ActivateMarkers();
+                OnGrab.Invoke(this.gameObject);
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isOverlapping = false;
-        collidingFuducial = null;
-
-        if (!isDisabled)
+        if (other.gameObject.name.StartsWith("Fuducial") && collidingFuducial == other )//!Regex.Match(other.gameObject.name, @"(P\d.*)").Success)
         {
-            DeactivateMarkers();
+            other.gameObject.GetComponent<ToggleFuducial>().isAttached = false;
+
+            isOverlapping = false;
+            collidingFuducial = null;
+
+            if (!isDisabled)
+            {
+                DeactivateMarkers();
+            }
         }
+
     }
 
     private void ActivateMarkers()
