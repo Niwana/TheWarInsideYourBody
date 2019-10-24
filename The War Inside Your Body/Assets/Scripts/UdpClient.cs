@@ -74,6 +74,9 @@ public class UdpClient : MonoBehaviour , TuioListener
 
         if (tuioObject.SymbolID == 115)
             protein = Instantiate(fuducialObject);
+        
+        if (tuioObject.SymbolID == 1)
+            protein = Instantiate(fuducialObject);
 
 
         gameObjectList.Add(tuioObject.SymbolID, protein);
