@@ -225,6 +225,8 @@ public class FuducialObjects : MonoBehaviour
             SpawnConnectionLine(new Vector3(5, 0, -15));
             SpawnConnectionLine(new Vector3(-3, 0, -7));
             SpawnConnectionLine(new Vector3(13, 0, -7));
+
+            StartCoroutine(PlayBacteriaBurst());
         }
 
         foreach (var marker in markers)
@@ -313,6 +315,14 @@ public class FuducialObjects : MonoBehaviour
         }
 
         return pos;
+    }
+
+    IEnumerator PlayBacteriaBurst()
+    {
+        yield return new WaitForSeconds(3f);
+
+        GameObject bacteriaBurst = GameObject.Find("Bacteria burst");
+        bacteriaBurst.GetComponent<ParticleSystem>().Play();
     }
 
     public void PlayAnimation()
