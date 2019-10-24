@@ -259,6 +259,7 @@ MonoBehaviour:
     type: 3}
   connectionColor: {r: 1, g: 0.7843137, b: 0, a: 1}
   connectionColorIntensity: 6
+  SpawnPosition: {x: 0, y: 0, z: 0}
   OnGrab:
     m_PersistentCalls:
       m_Calls:
@@ -909,6 +910,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6947682666342643108, guid: 0aa596b1423372945bba856720bde462,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8c7117c06264574cab468591379908b, type: 2}
+    - target: {fileID: -7151560370786593421, guid: 0aa596b1423372945bba856720bde462,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8c7117c06264574cab468591379908b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aa596b1423372945bba856720bde462, type: 3}
 --- !u!4 &2724572792850115827 stripped
