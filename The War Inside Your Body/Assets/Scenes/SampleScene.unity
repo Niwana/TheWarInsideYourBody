@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44820857, g: 0.4982323, b: 0.57557154, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482088, g: 0.49823272, b: 0.57557267, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1137,8 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d3eb004958c7244a51a9086dc07085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayIntroVideo: 1
-  PlayOutroVideo: 0
+  PlayIntroVideo: 0
   VideoCanvas: {fileID: 350898474}
   IntroVideo: {fileID: 632110041}
   OutroVideo: {fileID: 595875127}
@@ -21012,6 +21011,11 @@ PrefabInstance:
     - target: {fileID: 9188404001630248513, guid: aa28d9c635f62e54382ce5aac8be8bc7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188404001630248515, guid: aa28d9c635f62e54382ce5aac8be8bc7,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

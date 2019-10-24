@@ -10,6 +10,7 @@ public class FuducialObjects : MonoBehaviour
     private Collider collidingFuducial;
     private GameObject ring;
     public bool isDisabled = false;
+    private bool hasFuducial = false;
 
     private float ringSizeSpeed = 5f;
     private float startScale;
@@ -36,6 +37,7 @@ public class FuducialObjects : MonoBehaviour
     private GameObject collidingProtein;
     public Color connectionColor = new Color(1f, 0.7843137f, 0f);
     public float connectionColorIntensity = 6;
+
 
 
     private void Start()
@@ -70,8 +72,6 @@ public class FuducialObjects : MonoBehaviour
                 if (collidingFuducial.transform.position.x <= transform.position.x + 1000) //put range for safety
                 {
                     MoveTo(collidingFuducial.transform.position, collidingFuducial.transform.rotation, 0.02f, 360);
-                    //this.gameObject.transform.position = collidingFuducial.transform.position;
-                    //this.gameObject.transform.rotation = collidingFuducial.transform.rotation;
                 }
             }
         }

@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 6245209636377420611}
   m_Layer: 0
   m_Name: protein_1_I
-  m_TagString: Untagged
+  m_TagString: TableProtein
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,7 +614,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3bb4159bcfd9cfc4eb110c994768bebf, type: 2}
+      objectReference: {fileID: 2100000, guid: 883894c9925e48b4b92a4ac7cda8e807, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da21e97e27525564ba3954530291d63b, type: 3}
 --- !u!1 &5499401786231105798 stripped
@@ -775,7 +775,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c8b21aeabf9a82e4a9a69b336cd9e568, type: 2}
+      objectReference: {fileID: 2100000, guid: 9b998349eeefed6438a4c4ed17822e87, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3fed6ddda470a545a4306b9f85cd478, type: 3}
 --- !u!1 &306166295017617651 stripped

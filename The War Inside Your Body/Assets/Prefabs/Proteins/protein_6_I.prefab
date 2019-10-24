@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: -5858304269352486173}
   m_Layer: 0
   m_Name: protein_6_I
-  m_TagString: Untagged
+  m_TagString: TableProtein
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -580,11 +580,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2018154173010335748}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: f1a96f500267ff84e8610188354b647f,
-        type: 3}
-      propertyPath: m_Name
-      value: P6a
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f1a96f500267ff84e8610188354b647f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -640,12 +635,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f1a96f500267ff84e8610188354b647f,
+        type: 3}
+      propertyPath: m_Name
+      value: P6a
+      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: f1a96f500267ff84e8610188354b647f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 670224309865224971, guid: 016f122e532b3be4eb6ea34596d9600b,
-        type: 3}
+      objectReference: {fileID: 2100000, guid: 883894c9925e48b4b92a4ac7cda8e807, type: 2}
     - target: {fileID: -5178661895559278292, guid: f1a96f500267ff84e8610188354b647f,
         type: 3}
       propertyPath: m_Mesh
@@ -748,11 +747,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3958046506013238247}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: f1a96f500267ff84e8610188354b647f,
-        type: 3}
-      propertyPath: m_Name
-      value: P6c
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f1a96f500267ff84e8610188354b647f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -808,12 +802,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f1a96f500267ff84e8610188354b647f,
+        type: 3}
+      propertyPath: m_Name
+      value: P6c
+      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: f1a96f500267ff84e8610188354b647f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 670224309865224971, guid: 016f122e532b3be4eb6ea34596d9600b,
-        type: 3}
+      objectReference: {fileID: 2100000, guid: 883894c9925e48b4b92a4ac7cda8e807, type: 2}
     - target: {fileID: -5178661895559278292, guid: f1a96f500267ff84e8610188354b647f,
         type: 3}
       propertyPath: m_Mesh
@@ -841,11 +839,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7969693951219090685}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: f1a96f500267ff84e8610188354b647f,
-        type: 3}
-      propertyPath: m_Name
-      value: P6b
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f1a96f500267ff84e8610188354b647f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -900,6 +893,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f1a96f500267ff84e8610188354b647f,
+        type: 3}
+      propertyPath: m_Name
+      value: P6b
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: f1a96f500267ff84e8610188354b647f,
         type: 3}
