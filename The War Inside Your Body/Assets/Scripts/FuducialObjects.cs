@@ -251,6 +251,12 @@ public class FuducialObjects : MonoBehaviour
             membrane.GetComponent<Animator>().SetTrigger("playDestruction");
         }
 
+        if (Markers.p9Connected)
+        {
+            GameObject membrane = GameObject.Find("Membrane");
+            membrane.GetComponent<Animator>().SetTrigger("playDestructionSecond");
+        }
+
     }
 
     public void DisableFuducialObject()

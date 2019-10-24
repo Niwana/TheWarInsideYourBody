@@ -18,6 +18,7 @@ public class Markers : MonoBehaviour
     public static int p9CollisionCounter;
     public static bool p7Connected;
     public static bool p8Connected;
+    public static bool p9Connected;
 
 
 
@@ -33,13 +34,11 @@ public class Markers : MonoBehaviour
             }
 
             if (parent.name == "protein_7_I(Clone)")
-            {
                 p7Connected = true;
-            }
             if (parent.name == "protein_8_I(Clone)")
-            {
                 p8Connected = true;
-            }
+            if (parent.name == "protein_9_I(Clone)")
+                p9Connected = true;
 
             //Make marker invisible to show connection instead
             this.gameObject.SetActive(false);
