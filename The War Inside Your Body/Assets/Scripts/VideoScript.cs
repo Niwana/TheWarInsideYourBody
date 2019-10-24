@@ -27,7 +27,10 @@ public class VideoScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 
     void IntroVideoOver(UnityEngine.Video.VideoPlayer vp)
