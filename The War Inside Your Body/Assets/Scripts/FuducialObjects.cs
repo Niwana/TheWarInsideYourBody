@@ -235,6 +235,14 @@ public class FuducialObjects : MonoBehaviour
             }
         }
 
+        //Do stuff when protien 7 & 8 have connected
+        if (Markers.p7Connected && Markers.p8Connected)
+        {
+            //Play punching animation
+            GameObject protein6 = GameObject.Find("protein_6_V");
+            protein6.GetComponent<Animator>().SetTrigger("playPunch");
+        }
+
     }
 
     public void DisableFuducialObject()
@@ -338,7 +346,6 @@ public class FuducialObjects : MonoBehaviour
     {
         if (_object.transform.localScale.x <= 1)
         {
-            Debug.Log(_object.transform.localScale.x);
             _object.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
         }
     }

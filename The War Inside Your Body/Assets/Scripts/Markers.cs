@@ -16,6 +16,9 @@ public class Markers : MonoBehaviour
     public static event MatchAction OnMarkerMatch;
 
     public static int p9CollisionCounter;
+    public static bool p7Connected;
+    public static bool p8Connected;
+
 
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +30,15 @@ public class Markers : MonoBehaviour
                 p9CollisionCounter++;
                 if (p9CollisionCounter < 3)
                     return;
+            }
+
+            if (parent.name == "protein_7_I(Clone)")
+            {
+                p7Connected = true;
+            }
+            if (parent.name == "protein_8_I(Clone)")
+            {
+                p8Connected = true;
             }
 
             //Make marker invisible to show connection instead
