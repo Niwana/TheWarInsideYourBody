@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VideoScript : MonoBehaviour
 {
@@ -45,7 +46,9 @@ public class VideoScript : MonoBehaviour
         VideoCanvas.SetActive(false);
         OutroVideo.SetActive(false);
 
-        Application.Quit();
+        //Application.Quit();
+        SceneManager.LoadScene("SampleScene");
+        
     }
 
     public void PlayOutroVideo()

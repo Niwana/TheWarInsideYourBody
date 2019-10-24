@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4482088, g: 0.49823272, b: 0.57557267, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482091, g: 0.4982326, b: 0.57557315, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -12862,6 +12862,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2041324486}
     m_Modifications:
+    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
+        type: 3}
+      propertyPath: P0Narrative
+      value: 
+      objectReference: {fileID: 897004701}
+    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
+        type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 503390616}
+    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
+        type: 3}
+      propertyPath: BackgroundMusic
+      value: 
+      objectReference: {fileID: 503390616}
     - target: {fileID: 2589326239034005983, guid: dde89a2319ead2b4e8b980b6dbe50d05,
         type: 3}
       propertyPath: m_Name
@@ -12927,21 +12942,6 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
-        type: 3}
-      propertyPath: P0Narrative
-      value: 
-      objectReference: {fileID: 897004701}
-    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
-        type: 3}
-      propertyPath: backgroundMusic
-      value: 
-      objectReference: {fileID: 503390616}
-    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
-        type: 3}
-      propertyPath: BackgroundMusic
-      value: 
-      objectReference: {fileID: 503390616}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dde89a2319ead2b4e8b980b6dbe50d05, type: 3}
 --- !u!1 &1596234111
@@ -21907,15 +21907,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bacteria burst
       objectReference: {fileID: 0}
-    - target: {fileID: 5705457703914574852, guid: efd845304e1684c0d8a93299ec6d48e4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2042153316921133332, guid: efd845304e1684c0d8a93299ec6d48e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.52
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: 2042153316921133332, guid: efd845304e1684c0d8a93299ec6d48e4,
         type: 3}
@@ -21965,31 +21960,6 @@ PrefabInstance:
     - target: {fileID: 2042153316921133332, guid: efd845304e1684c0d8a93299ec6d48e4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1632570077102101296, guid: efd845304e1684c0d8a93299ec6d48e4,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1632570077102101296, guid: efd845304e1684c0d8a93299ec6d48e4,
-        type: 3}
-      propertyPath: ShapeModule.angle
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1632570077102101296, guid: efd845304e1684c0d8a93299ec6d48e4,
-        type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1632570077102101296, guid: efd845304e1684c0d8a93299ec6d48e4,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1632570077102101296, guid: efd845304e1684c0d8a93299ec6d48e4,
-        type: 3}
-      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
