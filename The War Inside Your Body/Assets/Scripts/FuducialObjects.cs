@@ -39,7 +39,7 @@ public class FuducialObjects : MonoBehaviour
     public Color connectionColor = new Color(1f, 0.7843137f, 0f);
     public float connectionColorIntensity = 6;
 
-    public static float MinSpawnDistance = 3f;
+    public static float MinSpawnDistance = 5f;
     public Vector3 SpawnPosition;
     private bool SpawnPositionReached = true;
 
@@ -324,7 +324,7 @@ public class FuducialObjects : MonoBehaviour
         bool suitablePosition = false;
         while (!suitablePosition)
         {
-            pos = new Vector3(Random.Range(-18, 14), 0f, Random.Range(-2, 0));
+            pos = new Vector3(Random.Range(-18, 10), 0f, Random.Range(-2, 0));
             suitablePosition = true;
             foreach (Vector3 existingPosition in tableProteinPositions)
             {

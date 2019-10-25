@@ -21,6 +21,14 @@ public class Markers : MonoBehaviour
     public static bool p9Connected;
 
 
+    private void Start()
+    {
+        p9CollisionCounter = 0;
+        p7Connected = false;
+        p8Connected = false;
+        p9Connected = false;
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {

@@ -616,7 +616,7 @@ MonoBehaviour:
   m_MinValue: 20
   m_MaxValue: 80
   m_WholeNumbers: 0
-  m_Value: 44.1
+  m_Value: 44.4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -856,7 +856,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b1cb424613ed41f4b80f0a9fb9c10f1d, type: 2}
+  - {fileID: 2100000, guid: 2bd6dc0a5cc0b8a419be3a5347ace94d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1477,7 +1477,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0.11328125, y: 0.03125, z: 0.02734375, w: -0.03125}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 4.5559e-41, w: 7.3289716e+19}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -11837,7 +11837,7 @@ MonoBehaviour:
   m_MinValue: -60
   m_MaxValue: -20
   m_WholeNumbers: 0
-  m_Value: -47.7
+  m_Value: -50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -12030,7 +12030,7 @@ MonoBehaviour:
   m_MinValue: -40
   m_MaxValue: 40
   m_WholeNumbers: 0
-  m_Value: 11
+  m_Value: 11.255
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -12863,21 +12863,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2041324486}
     m_Modifications:
-    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
-        type: 3}
-      propertyPath: P0Narrative
-      value: 
-      objectReference: {fileID: 897004701}
-    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
-        type: 3}
-      propertyPath: backgroundMusic
-      value: 
-      objectReference: {fileID: 503390616}
-    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
-        type: 3}
-      propertyPath: BackgroundMusic
-      value: 
-      objectReference: {fileID: 503390616}
     - target: {fileID: 2589326239034005983, guid: dde89a2319ead2b4e8b980b6dbe50d05,
         type: 3}
       propertyPath: m_Name
@@ -12943,6 +12928,21 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
+        type: 3}
+      propertyPath: P0Narrative
+      value: 
+      objectReference: {fileID: 897004701}
+    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
+        type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 503390616}
+    - target: {fileID: -8647532514257386357, guid: dde89a2319ead2b4e8b980b6dbe50d05,
+        type: 3}
+      propertyPath: BackgroundMusic
+      value: 
+      objectReference: {fileID: 503390616}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dde89a2319ead2b4e8b980b6dbe50d05, type: 3}
 --- !u!1 &1596234111
@@ -13446,7 +13446,7 @@ MonoBehaviour:
   m_MinValue: 40
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 82.3
+  m_Value: 85.7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -13771,7 +13771,7 @@ Camera:
   far clip plane: 24.31
   field of view: 60
   orthographic: 1
-  orthographic size: 19
+  orthographic size: 20
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -13795,7 +13795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041324483}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5.09, y: -19.914145, z: 3.66}
+  m_LocalPosition: {x: 1.09, y: -19.914145, z: 4.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 503390614}

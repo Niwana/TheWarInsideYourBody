@@ -31,16 +31,20 @@ public class VideoScript : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");
         }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            IntroVideoOver(IntroVideo.GetComponent<UnityEngine.Video.VideoPlayer>());
+        }
     }
 
-    void IntroVideoOver(UnityEngine.Video.VideoPlayer vp)
+    public void IntroVideoOver(UnityEngine.Video.VideoPlayer vp)
     {
-        VideoCanvas.SetActive(false);
+        VideoCanvas.SetActive(false);//1.09 4.56
         IntroVideo.SetActive(false);
 
         GameObject.Find("Audio Manager").GetComponent<AudioEventScript>().OnIntroVideoOver();
 
-        GameObject protein = GameObject.Find("protein_Root_V");
+        GameObject protein = GameObject.Find("Protein_Root_V");
         protein.GetComponent<Animator>().SetTrigger("playFlyIn");
     }
 

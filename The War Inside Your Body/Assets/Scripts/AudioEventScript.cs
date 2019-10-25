@@ -35,17 +35,34 @@ public class AudioEventScript : MonoBehaviour
         protein1.GetComponent<ProteinAudioScript>().PlayPing();
 
         Debug.Log("protein connect! " + protein0.name + " and " + protein1.name);
-        if (protein0.name.StartsWith("Protein_1") && protein1.name.StartsWith("StartProtein"))
+        VideoScript videoscr = GameObject.Find("GameManager").GetComponent<VideoScript>();
+        if (videoscr.IntroVideo.GetComponent<UnityEngine.Video.VideoPlayer>().isPlaying)
         {
+            videoscr.IntroVideoOver(videoscr.IntroVideo.GetComponent<UnityEngine.Video.VideoPlayer>());
+        }
+        if (MembraneNarrative.isPlaying)
+            MembraneNarrative.Stop();
+
+
+        if (protein0.name.StartsWith("protein_1") && protein1.name.StartsWith("StartProtein"))
+        {
+            if (P0Narrative.isPlaying)
+                P0Narrative.Stop();
             P1Narrative.Play();
         } else if (protein0.name.StartsWith("protein_3") && protein1.name.StartsWith("protein_2"))
         {
+            if (P1Narrative.isPlaying)
+                P1Narrative.Stop();
             P3Narrative.Play();
-        } else if (protein0.name.StartsWith("protein_8") && protein1.name.StartsWith("protein_6"))
+        } else if (Markers.p7Connected && Markers.p8Connected)
         {
-            P8Narrative.Play();
+            if (P3Narrative.isPlaying)
+                P3Narrative.Stop();
+            P8Narrative.Play();// -50 11.9155 84.7 44.44
         } else if (protein0.name.StartsWith("protein_9"))
         {
+            if (P8Narrative.isPlaying)
+                P8Narrative.Stop();
             P9Narrative.Play();
             StartCoroutine(PlayOutro(P9Narrative.clip.length + 1f));
         }
