@@ -39,7 +39,7 @@ public class FuducialObjects : MonoBehaviour
     public Color connectionColor = new Color(1f, 0.7843137f, 0f);
     public float connectionColorIntensity = 6;
 
-    public static float MinSpawnDistance = 5f;
+    public static float MinSpawnDistance = 7f;
     public Vector3 SpawnPosition;
     private bool SpawnPositionReached = true;
 
