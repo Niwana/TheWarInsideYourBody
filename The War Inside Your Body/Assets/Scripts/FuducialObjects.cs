@@ -20,9 +20,11 @@ public class FuducialObjects : MonoBehaviour
 
     public GameObject proteinToSpawn;
     public GameObject proteinToSpawn2;
+    public GameObject proteinToSpawn3;
 
     public int spawnAmountProtein_1;
     public int spawnAmountProtein_2;
+   
 
     List<GameObject> markers = new List<GameObject>();
 
@@ -261,6 +263,9 @@ public class FuducialObjects : MonoBehaviour
 
             GameObject membrane = GameObject.Find("Membrane");
             membrane.GetComponent<Animator>().SetTrigger("playDestruction");
+
+            proteinToSpawn = proteinToSpawn3;
+            SpawnProteins();
         }
 
         if (Markers.p9Connected)

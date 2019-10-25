@@ -250,7 +250,8 @@ MonoBehaviour:
   targetRingMinSize: 100
   proteinToSpawn: {fileID: 0}
   proteinToSpawn2: {fileID: 0}
-  spawnAmountProtein_1: 0
+  proteinToSpawn3: {fileID: 0}
+  spawnAmountProtein_1: 1
   spawnAmountProtein_2: 0
   matchTargetPosition: {x: -3, y: 0, z: -7}
   matchTargetRotation: {x: -1, y: 0, z: 0}

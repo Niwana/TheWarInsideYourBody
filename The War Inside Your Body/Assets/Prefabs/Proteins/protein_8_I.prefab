@@ -251,6 +251,7 @@ MonoBehaviour:
   proteinToSpawn: {fileID: 6940247097242390213, guid: 97357382fc4fbcf4e838b85b781a5f55,
     type: 3}
   proteinToSpawn2: {fileID: 0}
+  proteinToSpawn3: {fileID: 0}
   spawnAmountProtein_1: 1
   spawnAmountProtein_2: 0
   matchTargetPosition: {x: 13, y: 0, z: -7}
