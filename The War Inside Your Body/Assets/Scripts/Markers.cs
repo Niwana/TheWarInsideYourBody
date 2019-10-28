@@ -41,12 +41,18 @@ public class Markers : MonoBehaviour
                     return;
             }
 
-            if (parent.name == "protein_7_I(Clone)")
+            if (parent.name.StartsWith("protein_7_I"))
                 p7Connected = true;
-            if (parent.name == "protein_8_I(Clone)")
+            if (parent.name.StartsWith("protein_8_I"))
                 p8Connected = true;
-            if (parent.name == "protein_9_I(Clone)")
+            if (parent.name.StartsWith("protein_9_I"))
                 p9Connected = true;
+            if (other.name.StartsWith("protein_7_I"))
+                p7Connected = true;
+            if (other.name.StartsWith("protein_8_I"))
+                p8Connected = true;
+            if (other.name.StartsWith("protein_9_ I"))
+                p9Connected = true; 
 
             //Make marker invisible to show connection instead
             this.gameObject.SetActive(false);
